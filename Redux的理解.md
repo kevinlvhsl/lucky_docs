@@ -112,7 +112,7 @@ const store = createStore(
   combineReducers({ routing: routerReducer, ...rootReducer }),
   composeWithDevTools(applyMiddleware(...middlewares))
 );
-//使用Provider包
+//<Provider store> 使组件层级中的 connect() 方法都能够获得 Redux store。正常情况下，你的根组件应该嵌套在 <Provider> 中才能使用 connect() 方法
 const render = Component => ReactDOM.render(
       <Provider store={store}>
         <Component />
