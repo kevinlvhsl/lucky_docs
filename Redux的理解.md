@@ -156,6 +156,7 @@ import "./index.less";
   //组件共享一些state，那么可以将state放在global中，比如demo
   //2、只有定义了此参数，组件将会监听 Redux store 的变化。任何时候，只要 Redux store 发生改变，
   //mapStateToProps 函数就会被调用。该回调函数必须返回一个纯对象，这个对象会与组件的 props 合并
+  //3、state.home从哪里来？其实是上述总的reducer中的{home,global}中的home
   state => ({ ...state.home,...state.global }),
   //将 action 作为 props 绑定到组件上
   dispatch => bindActionCreators({ ...home, ...global }, dispatch)
