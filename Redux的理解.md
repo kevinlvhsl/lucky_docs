@@ -89,7 +89,17 @@ export default rootReducer;
 
 ```
 
-### 如何将state挂载到全局中
+### 全局共享store
+
+> **使用Reducer 创建全局唯一的store：将各个Reducer返回的state通过combineReducer合并在在一起（这就是下面【 如何在react中使用state和action】）
+//为什么使用@connect的第一参数可以使用...state.home来获取home的reducer的state；**
+
+> **combineReducers 辅助函数的作用是，把一个由多个不同 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数;**
+
+const store = createStore(
+  combineReducers({ routing: routerReducer, ...rootReducer }),
+  composeWithDevTools(applyMiddleware(...middlewares))
+);
 
 ```
 
