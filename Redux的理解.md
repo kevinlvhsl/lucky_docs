@@ -137,11 +137,15 @@ import * as global from "../actions/global";
 
 import "./index.less";
 
+//connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])其作用为连接 React 组件与 Redux store；
+
 @connect(
-  //那些state是需要传递给当前页面的，...state.home是当前页面的状态管理，global则是全局state，如果需要多个
+  //1、store 中的数据作为 props 绑定到组件上 ，...state.home是当前页面的状态管理，global则是全局state，如果需要多个
   //组件共享一些state，那么可以将state放在global中，比如demo
+  //2、只有定义了此参数，组件将会监听 Redux store 的变化。任何时候，只要 Redux store 发生改变，
+  //mapStateToProps 函数就会被调用。该回调函数必须返回一个纯对象，这个对象会与组件的 props 合并
   state => ({ ...state.home,...state.global }),
-  //需要传递给当前页面的action
+  //将 action 作为 props 绑定到组件上
   dispatch => bindActionCreators({ ...home, ...global }, dispatch)
 )
 
@@ -157,3 +161,13 @@ getInfo().then(res=>res.json()).then(da=>{
     
 })
 ```
+
+> connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
+
+> 1、mapStateToProps（state, ownProps） 
+
+-  mapStateToProps是一个函数，用于建立组件跟 store 的 state 的映射关系 作为一个函数，它可以传入两个参数，结果一定要返回一个 object 
+- 传入mapStateToProps之后，会订阅store的状态改变，在每次 store 的 state 发生变化的时候，都会被调用 
+- ownProps代表组件本身的props，如果写了第二个参数ownProps，那么当prop发生变化的时候，mapStateToProps也会被调用。例如，当 props接收到来自父组件一个小小的改动，那么你所使用的 ownProps 参数，mapStateToProps 都会被重新计算）。 
+- mapStateToProps可以不传，如果不传，组件不会监听store的变化，也就是说Store的更新不会引起UI的更新 
+
