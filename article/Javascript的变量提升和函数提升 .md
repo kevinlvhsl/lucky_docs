@@ -62,6 +62,7 @@ var funcName=new Function();
 > **只有函数声明方式采用函数作用域的提升**
 
 例子：
+#### （1）变量提升
 ```js
 
 demo();//结果为:undefined
@@ -80,6 +81,43 @@ function demo() {
 demo();
 age=20;
 ```
+
+#### （2）相同函数名变量提升
+```js
+function demo(){
+  console.log("我是第一个函数啊")
+}
+demo();
+function demo(){
+  console.log("我是第二个函数啊")
+}
+demo();
+
+//执行结果为:我是第二个函数啊   我是第二个函数啊
+//执行过程为:
+function demo(){//第一个demo函数提升至作用域顶端，第二个同名demo函数也提升至顶端，覆盖第一个demo函数
+console.log("我是第二个函数啊")
+}
+demo()//调用第一个demo函数
+demo()//调用第二个demo函数
+
+```
+
+#### （3）函数名和变量名冲突：函数名优先级高(函数优先)
+```
+
+console.log(demo);
+
+var demo="我是变量";
+function demo (){
+  console.log("我是函数");
+}
+//输出结果为:
+ƒ demo(){
+  console.log("我是函数");
+}
+```
+
 
 ### 参考:
 - [JavaScript 解析器、预解析、变量提升、函数提升](https://blog.csdn.net/weixin_42787326/article/details/81328757)
