@@ -81,7 +81,6 @@ console.log(new Food('cheese', 5).name);
 
 ```
 
-
 ### 文章参考
 - [深入理解call、apply、bind（改变函数中的this指向）](https://blog.csdn.net/zhouzuoluo/article/details/84935106)
  
