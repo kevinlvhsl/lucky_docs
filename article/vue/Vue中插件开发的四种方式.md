@@ -335,4 +335,6 @@ Vue.filter("currency", currency);
 
 上述已经简单讲解了Vue插件开发的四种方式，最后一种方式，也就是将上述四种组合在一个install方法中即可。
 
+文章实例请见：examples目录。
+
 [欢迎Star](https://github.com/MrGaoGang/lucky_docs)
