@@ -2,6 +2,10 @@
   <div class="main">
     <h1>购物车案例</h1>
     <Tabs>
+      <TabPane label="Render渲染实例">
+        <render-demo/>
+      </TabPane>
+
       <TabPane label="全局/Vue实例插件">
         <Plugins/>
       </TabPane>
@@ -31,8 +35,19 @@ import D from "./D.vue";
 import ProductList from "./ProductList.vue";
 import ShoppingCart from "./ShoppingCart.vue";
 import { Tabs, TabPane } from "iview";
+import RenderDemo from "./RenderDemo.vue";
 export default {
-  components: { ProductList, ShoppingCart, Tabs, TabPane, Plugins, C, D }
+  components: {
+    ProductList,
+    ShoppingCart,
+    Tabs,
+    TabPane,
+    Plugins,
+    C,
+    D,
+    RenderDemo
+  },
+  
 };
 </script>
 
