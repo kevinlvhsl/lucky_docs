@@ -192,7 +192,7 @@ render: function (createElement) {
 
 效果图:
 
-<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=600 height=400 />
+<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=600 height=300 />
 
 iview的默认table组件不支持 表头输入框筛选，[官方地址](https://www.iviewui.com/components/table#ZDYLMB)
 此处默认您有了一定的vue开发基础。
@@ -370,8 +370,8 @@ console.log(allHeader);
 ```
 
 最后实现的效果为:
-<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=600 height=600 />
-<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/render.png?raw=true" width=600 height=600 />
+<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=600 height=300 />
+<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/render.png?raw=true" width=600 height=300 />
 
 
 此文源码案例:[欢迎Star](https://github.com/MrGaoGang/lucky_docs/)
