@@ -1,4 +1,6 @@
 此文源码案例:[欢迎Star](https://github.com/MrGaoGang/lucky_docs/)
+
+
 Vue 组件的开发有几种方式：单文件组件，使用 render 函数渲染，使用 template。
 
 在大多数的情况下，Vue 可以使用单文件/template 的方式来创建页面；然而在有一些情况我们需要使用 JavaScript 的编程能力，比如使用第三方框架时，想要自定义某个功能；这个时候就可以使用到 render 函数。
@@ -186,7 +188,7 @@ render: function (createElement) {
 
 效果图:
 
-![效果图](../images/table-filter.png)
+<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=500 height=300>
 
 iview的默认table组件不支持 表头输入框筛选，[官方地址](https://www.iviewui.com/components/table#ZDYLMB)
 此处默认您有了一定的vue开发基础。
