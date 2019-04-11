@@ -27,5 +27,6 @@
 2. [Vue插件开发详解](https://github.com/MrGaoGang/lucky_docs/blob/master/article/vue/Vue%E4%B8%AD%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F.md) 【原创】
 
 
+3. [Vue使用render函数渲染组件详解](https://github.com/MrGaoGang/lucky_docs/blob/master/article/vue/Vue%E4%BD%BF%E7%94%A8render%E5%87%BD%E6%95%B0%E6%B8%B2%E6%9F%93%E7%BB%84%E4%BB%B6.md) 【原创】
 
 

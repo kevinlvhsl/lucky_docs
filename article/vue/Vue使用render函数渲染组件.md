@@ -1,5 +1,9 @@
 此文源码案例:[欢迎Star](https://github.com/MrGaoGang/lucky_docs/)
 
+**目录**
+- [一、Render 函数参数详解](#一render-函数参数详解)
+- [二、样例：如何给表格组件添加表头筛选](#二样例如何给表格组件添加表头筛选)
+
 
 Vue 组件的开发有几种方式：单文件组件，使用 render 函数渲染，使用 template。
 
@@ -188,7 +192,7 @@ render: function (createElement) {
 
 效果图:
 
-<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=500 height=300 />
+<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=600 height=400 />
 
 iview的默认table组件不支持 表头输入框筛选，[官方地址](https://www.iviewui.com/components/table#ZDYLMB)
 此处默认您有了一定的vue开发基础。
@@ -366,8 +370,8 @@ console.log(allHeader);
 ```
 
 最后实现的效果为:
-<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=500 height=300 />
-<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/render.png?raw=true" width=500 height=300 />
+<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=600 height=600 />
+<img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/render.png?raw=true" width=600 height=600 />
 
 
 此文源码案例:[欢迎Star](https://github.com/MrGaoGang/lucky_docs/)
