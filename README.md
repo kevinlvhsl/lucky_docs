@@ -30,3 +30,7 @@
 3. [Vue使用render函数渲染组件详解](https://github.com/MrGaoGang/lucky_docs/blob/master/article/vue/Vue%E4%BD%BF%E7%94%A8render%E5%87%BD%E6%95%B0%E6%B8%B2%E6%9F%93%E7%BB%84%E4%BB%B6.md) 【原创】
 
 
+
+
+### 其他
+1. [常用的github API](https://github.com/MrGaoGang/lucky_docs/blob/master/article/githubApi.md)
