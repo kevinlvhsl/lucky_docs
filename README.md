@@ -9,7 +9,7 @@
 - [Vue开发](#vue开发)
 
 ### JavaScript基础学习
-1. [ES5和ES6继承机制的设计思想]http://keenwon.com/1524.html) 【转载】
+1. [ES5和ES6继承机制的设计思想](http://keenwon.com/1524.html) 【转载】
 
 2. [Javascript 代码执行顺序](https://www.cnblogs.com/wuyepeng/p/10147885.html) :+1: 【转载】
 
