@@ -177,6 +177,7 @@ render(createElement=>
 
 ```
 注意：子组件中的每一项（VNodes）都必须是唯一的;意味着，下面的 render function 是无效的：
+
 ```js
 render: function (createElement) {
   var myParagraphVNode = createElement('p', 'hi')
