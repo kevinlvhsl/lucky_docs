@@ -9,7 +9,7 @@
 - [Vue开发](#vue开发)
 
 ### JavaScript基础学习
-1. [Javascript继承机制的设计思想](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html) 【转载】
+1. [ES5和ES6继承机制的设计思想](http://keenwon.com/1524.html) 【转载】
 
 2. [Javascript 代码执行顺序](https://www.cnblogs.com/wuyepeng/p/10147885.html) :+1: 【转载】
 
@@ -19,6 +19,7 @@
 
 5. [Javascript的变量提升和函数提升](https://github.com/MrGaoGang/lucky_docs/blob/master/article/javascript/Javascript%E7%9A%84%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87%20.md) 【原创】
 
+6. [Javascript原型和原型链](https://segmentfault.com/a/1190000015642813)
 
 ### Vue开发
 

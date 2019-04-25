@@ -6,13 +6,13 @@ https://api.github.com/users/mrgaogang
 
 #### 最近的Events
 
-https://api.github.com/users/MrGaoGang/received_events
+https://api.github.com/users/MrGaoGang/events?page=1&per_page=20
 
 
 
 #### 获取个人的resp（资料）
 
-https://api.github.com/users/mrgaogang/repos?sort=updated&direction=desc
+https://api.github.com/users/mrgaogang/repos?sort=updated&direction=desc?page=1&per_page=20
 
 
 参数  | 类型 | 介绍
