@@ -24,6 +24,7 @@
         "highlight",
         "expandable-chapters-small",
         "github",
+        "disqus",
         "github-buttons",
         "chapter-fold",
         "sharing-plus",
@@ -40,7 +41,9 @@
         "pageview-count"
     ],
     "pluginsConfig": {
-    
+        "disqus": {
+            "shortName": "gitbook-tutorial"
+        },
         "github": {
             "url": "https://github.com/mrgaogang"
         },
@@ -54,7 +57,7 @@
             }]
         },
         "page-toc-button": {
-            "maxTocDepth": 2,
+            "maxTocDepth": 4,
             "minTocSize": 2
         },
 
