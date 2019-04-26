@@ -15,28 +15,25 @@
         "readme": "README.md"
     },
     "links": {
-        "sidebar": {
-            "高先生": "https://github.com/mrgaogang"
-        }
+     
     },
     "plugins": [
         "-sharing",
         "splitter",
-        "expandable-chapters-small",
         "anchors",
         "highlight",
-        "back-to-top-button",
         "expandable-chapters-small",
         "github",
         "github-buttons",
+        "chapter-fold",
         "sharing-plus",
         "anchor-navigation-ex",
         "favicon",
+        "code",
         "-lunr",
         "-search",
         "search-pro",
         "tbfed-pagefooter",
-        "page-toc-button",
         "klipse",
         "donate",
         "theme-api",
@@ -104,4 +101,5 @@
             "wechatText": "微信捐赠"
           }
     }
+  
 }
