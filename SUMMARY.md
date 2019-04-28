@@ -21,6 +21,22 @@
 
 * [三、轻量化平台Mendix](/article/mendix/README.md)
 
+    * [1. Mendix环境搭建](/article/mendix/env.md)
+
+    * [2. Mendix使用Java](/article/mendix/javaaction.md)
+
+    * [3. 组件开发](/article/mendix/widget.md)
+        * [1) 环境准备](/article/mendix/widgets/开发组件前工具的准备.md)
+        * [2) 开发组件之注意事项](https://note.youdao.com/ynoteshare1/index.html?id=8abc67538746213f182025deccc118ca&type=note)
+        * [3) Vue开发Mendix组件](/article/mendix/widgets/Vue_Mendix.md)
+        * [4) 组件进阶-详细API](/article/mendix/widgets/详细API.md)
+        * [5) 组件进阶-常用API](/article/mendix/widgets/常用API.md)
+
+    * [4. Mendix后台程序环境搭建](/article/mendix/Mendix后台程序环境搭建.md)
+    * [5. 如何使用Mendix创建REST服务](http://note.youdao.com/noteshare?id=a81aebe305706f8e6fd5a50638d7cf98)
+    * [6. Mendix后台程序环境搭建](/article/mendix/获取配置信息,使用java创建Rest服务.md)
+    * [7. Mendix教程（11篇文章）](/article/mendix/一些功能的实现.md)
+
 
 
 
