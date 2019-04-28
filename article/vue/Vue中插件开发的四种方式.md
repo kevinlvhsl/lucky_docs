@@ -156,6 +156,7 @@ Vue.use(install);
 - 若存在同名方法则优先调用混入对象的方法。
 
 - 值为对象的选项，例如 methods, components 和 directives，将被混合为同一个对象。两个对象键名冲突时，取组件对象的键值对。
+
 ```js
 var mixin = {
   data: function() {
@@ -199,6 +200,7 @@ export default {
       }
   }
 };
+
 ```
 
 
