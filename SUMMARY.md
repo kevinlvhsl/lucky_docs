@@ -1,5 +1,5 @@
 
-* [Introduction](README.md)
+* [简介](README.md)
 
 ### 我的开源项目
 * [1. luckly_recyclerview](/article/open/luckly_recyclerview.md)

@@ -1,37 +1,59 @@
-## 每日一学
-[常用第三方库](https://github.com/MrGaoGang/lucky_docs/blob/master/examples/%E4%BC%98%E7%A7%80%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93.md)
 
-<br>
+> 是否感谢大家来到我的个人博客，俗话说“好记性不如烂笔头”，在互联网高速发展的今天，主动学习成为一个必备技能。个人主要从事Mendix，Vue，Android开发的相关工作，由于最近工作的原因Android接触较少，请大家见谅。
 
-**目录**：
+> 此文主要分为六大板块，分别介绍了个人的一些开源项目，以及Vue,Javascript,Mendix等开发；同时提供了一些常用插件开发技巧和开发中资源的收集和整理。
 
-- [JavaScript基础学习](#javascript基础学习)  
-- [Vue开发](#vue开发)
-
-### JavaScript基础学习
-1. [ES5和ES6继承机制的设计思想](http://keenwon.com/1524.html) 【转载】
-
-2. [Javascript 代码执行顺序](https://www.cnblogs.com/wuyepeng/p/10147885.html) :+1: 【转载】
-
-3. [Javascript的call和applay方法](https://github.com/MrGaoGang/lucky_docs/blob/master/article/javascript/Javascript%E7%9A%84call%E5%92%8Capplay%E6%96%B9%E6%B3%95.md) 【原创】
-
-4. [Javascript深入之创建对象的多种方式以及优缺点](https://github.com/mqyqingfeng/Blog/blob/master/articles/%E6%B7%B1%E5%85%A5%E7%B3%BB%E5%88%97%E6%96%87%E7%AB%A0/JavaScript%E6%B7%B1%E5%85%A5%E4%B9%8B%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%9A%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9.md) 【转载】
-
-5. [Javascript的变量提升和函数提升](https://github.com/MrGaoGang/lucky_docs/blob/master/article/javascript/Javascript%E7%9A%84%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87%20.md) 【原创】
-
-6. [Javascript原型和原型链](https://segmentfault.com/a/1190000015642813)
-
-### Vue开发
-
-1. [Vue父组件使用scoped无法修改子组件样式](https://github.com/MrGaoGang/lucky_docs/blob/master/article/vue/Vue%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8scoped%E6%97%A0%E6%B3%95%E4%BF%AE%E6%94%B9%E5%AD%90%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F.md) 【原创】
-
-2. [Vue插件开发详解](https://github.com/MrGaoGang/lucky_docs/blob/master/article/vue/Vue%E4%B8%AD%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F.md) 【原创】
-
-
-3. [Vue使用render函数渲染组件详解](https://github.com/MrGaoGang/lucky_docs/blob/master/article/vue/Vue%E4%BD%BF%E7%94%A8render%E5%87%BD%E6%95%B0%E6%B8%B2%E6%9F%93%E7%BB%84%E4%BB%B6.md) 【原创】
+**我的开源项目(欢迎star)**
+* [1. luckly_recyclerview](/article/open/luckly_recyclerview.md)
+* [2. luckly_popup_window](/article/open/luckly_popup_window.md)
+* [3. Vue+iView开发基础包](/article/open/vue_template.md)
+* [4. 个人Github移动客户端](https://github.com/MrGaoGang/lucky_vue_mobile)
 
 
 
+----
 
-### 其他
-1. [常用的github API](https://github.com/MrGaoGang/lucky_docs/blob/master/article/githubApi.md)
+
+**Vue开发**
+
+* [1. Vue父组件使用scoped无法修改子组件样式](/article/vue/Vue父组件使用scoped无法修改子组件样式.md)
+* [2. Vue使用render函数渲染组件](/article/vue/Vue使用render函数渲染组件.md)
+* [3. Vue中插件开发的四种方式](/article/vue/Vue中插件开发的四种方式.md)
+----
+
+
+
+**JavaScript学习心得**
+----
+
+
+**轻量化平台Mendix**
+
+* [1. Mendix环境搭建](/article/mendix/env.md)
+* [2. Mendix使用Java](/article/mendix/javaaction.md)
+
+* [3. 组件开发](/article/mendix/widget.md)
+    * [1) 环境准备](/article/mendix/widgets/开发组件前工具的准备.md)
+    * [2) 开发组件之注意事项](https://note.youdao.com/ynoteshare1/index.html?id=8abc67538746213f182025deccc118ca&type=note)
+    * [3) Vue开发Mendix组件](/article/mendix/widgets/Vue_Mendix.md)
+    * [4) 组件进阶-详细API](/article/mendix/widgets/详细API.md)
+    * [5) 组件进阶-常用API](/article/mendix/widgets/常用API.md)
+
+* [4. Mendix后台程序环境搭建](/article/mendix/Mendix后台程序环境搭建.md)
+* [5. 如何使用Mendix创建REST服务](http://note.youdao.com/noteshare?id=a81aebe305706f8e6fd5a50638d7cf98)
+* [6. Mendix后台程序环境搭建](/article/mendix/获取配置信息,使用java创建Rest服务.md)
+* [7. Mendix教程（11篇文章）](/article/mendix/一些功能的实现.md)
+
+----
+
+
+
+
+**Android开发**
+
+
+----
+
+**其他及工具**
+
+* [VsCode插件开发](/article/other/vscode.md)
