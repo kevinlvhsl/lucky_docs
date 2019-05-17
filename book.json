@@ -31,6 +31,7 @@
         "anchor-navigation-ex",
         "favicon",
         "-lunr",
+        "splitter",
         "-search",
         "search-pro",
         "tbfed-pagefooter",
