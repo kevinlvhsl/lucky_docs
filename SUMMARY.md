@@ -5,13 +5,14 @@
 * [1. luckly_recyclerview](/article/open/luckly_recyclerview.md)
 * [2. luckly_popup_window](/article/open/luckly_popup_window.md)
 * [3. Vue+iView开发基础包](/article/open/vue_template.md)
+* [4. Vue移动图表库oView](https://github.com/MrGaoGang/oview)
 
 
 ----
 
-### 移动图表框架oView
+### 移动图表库oView
 
-* [1. 安装和配置](/article/oview/README.md)
+* [1. 开始](/article/oview/README.md)
 * [2. 图表Chart](/article/oview/Chart.md)
 * [3. 饼状图](/article/oview/Pie.md)
 
