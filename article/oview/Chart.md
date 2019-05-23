@@ -18,13 +18,45 @@
 
 ## 2、o-chart各个字段介绍
 
-> o-chart主要作用是配置图表的公用属性,抽离不同图形公用方法，并根据类型不同，而渲染不同图形。
+> 希望您能静下心来，花5分钟时间简单了解一下，o-chart各个字段的作用。o-chart主要作用是配置图表的公用属性,抽离不同图形公用方法，并根据类型不同，而渲染不同图形。
 
 ### data（数据源）
-- 是否必须:True
+- 是否必须:**True**
 - 参数类型:Array
 - 描述:图表的数据源
 - 默认：[]
+
+
+### col-defs (数据源字段配置)
+- 是否必须:False
+- 参数类型:Object
+- 描述:对上述提供的数据源中每个字段进行配置
+- 默认：{}
+
+一个示例:
+
+```js
+//以折线图为例
+  <o-chart :data="normalData" :col-defs="normaColConfig" :tooltip="normalTootip">
+      <o-line :axis="normaAxis" :position="'date*value'"></o-line>
+  </o-chart>
+//data部分
+   normaColConfig: {
+        //对每个字段配置
+        //正常的折线图每一个字段的配置
+        value: {
+          tickCount: 5, //坐标点的个数
+          min: 0
+        },
+        date: {
+          type: "timeCat", //时间类型
+          range: [0, 1],
+          tickCount: 3 //坐标点的个数
+        }
+      },
+```
+
+[详细配置说明](https://www.yuque.com/antv/f2/api-scale)
 
 
 ### custom-render（自定义渲染图表）
@@ -249,3 +281,5 @@ titleStyle: {
 - 描述:度量 Scale，是数据空间到图形空间的转换桥梁，负责原始数据到 [0, 1] 区间数值的相互转换工作。针对不同的数据类型对应不同类型的度量。
 - 默认：{}
 - 说明：示例请见[面积图](https://github.com/MrGaoGang/oview/blob/master/examples/components/chart/Area.vue)
+
+[文档详情说明](https://www.yuque.com/antv/f2/api-scale)
