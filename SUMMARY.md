@@ -12,9 +12,16 @@
 
 ### 移动图表库oView
 
-* [1. 开始](/article/oview/README.md)
+* [1. 快速开始](/article/oview/README.md)
 * [2. 图表Chart](/article/oview/Chart.md)
-* [3. 饼状图](/article/oview/Pie.md)
+* [3. 图表构建](/article/oview/chart_specific.md)
+    * [饼状图](/article/oview/chart/pie.md)
+    * [柱状图](/article/oview/chart/histo.md)
+    * [折线图](/article/oview/chart/line.md)
+    * [雷达图](/article/oview/chart/radar.md)
+    * [散点图和气泡图](/article/oview/chart/point.md)
+    * [面积图](/article/oview/chart/area.md)
+
 
 
 

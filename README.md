@@ -1,7 +1,7 @@
 
 > 是否感谢大家来到我的个人博客，俗话说“好记性不如烂笔头”，在互联网高速发展的今天，主动学习成为一个必备技能。个人主要从事Mendix，Vue，Android开发的相关工作，由于最近工作的原因Android接触较少，请大家见谅。
 
-> 此文主要分为六大板块，分别介绍了个人的一些开源项目，以及Vue,Javascript,Mendix等开发；同时提供了一些常用插件开发技巧和开发中资源的收集和整理。
+> 此文主要分为六大板块，分别介绍了个人的一些开源工具，以及Vue,Javascript,Mendix等开发；同时提供了一些常用插件开发技巧和开发中资源的收集和整理。
 
 **我的开源项目(欢迎star)**
 * [1. luckly_recyclerview](/article/open/luckly_recyclerview.md)
@@ -10,6 +10,19 @@
 * [4. 个人Github移动客户端](https://github.com/MrGaoGang/lucky_vue_mobile)
 
 
+----
+
+**oView 基于F2的移动端图表库**
+
+* [1. 快速开始](/article/oview/README.md)
+* [2. 图表Chart](/article/oview/Chart.md)
+* [3. 图表构建](/article/oview/chart_specific.md)
+    * [饼状图](/article/oview/chart/pie.md)
+    * [柱状图](/article/oview/chart/histo.md)
+    * [折线图](/article/oview/chart/line.md)
+    * [雷达图](/article/oview/chart/radar.md)
+    * [散点图和气泡图](/article/oview/chart/point.md)
+    * [面积图](/article/oview/chart/area.md)
 
 ----
 
@@ -22,8 +35,6 @@
 ----
 
 
-
-**JavaScript学习心得**
 ----
 
 
