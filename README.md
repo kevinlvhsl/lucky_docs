@@ -32,6 +32,8 @@
 * [1. Vue父组件使用scoped无法修改子组件样式](/article/vue/Vue父组件使用scoped无法修改子组件样式.md)
 * [2. Vue使用render函数渲染组件](/article/vue/Vue使用render函数渲染组件.md)
 * [3. Vue中插件开发的四种方式](/article/vue/Vue中插件开发的四种方式.md)
+* [2. Vue监听路由变化之数据刷新](/article/vue/Vue路由变化页面没有刷新解决办法.md)
+
 ----
 
 
@@ -46,7 +48,7 @@
 * [3. 组件开发](/article/mendix/widget.md)
     * [1) 环境准备](/article/mendix/widgets/开发组件前工具的准备.md)
     * [2) 开发组件之注意事项](https://note.youdao.com/ynoteshare1/index.html?id=8abc67538746213f182025deccc118ca&type=note)
-    * [3) Vue开发Mendix组件](/article/mendix/widgets/Vue_Mendix.md)
+    * [3) Vue开发Mendix组件模板](/article/mendix/widgets/Vue_Mendix.md)
     * [4) 组件进阶-详细API](/article/mendix/widgets/详细API.md)
     * [5) 组件进阶-常用API](/article/mendix/widgets/常用API.md)
 

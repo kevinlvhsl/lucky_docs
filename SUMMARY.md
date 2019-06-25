@@ -50,7 +50,7 @@
     * [3. 组件开发](/article/mendix/widget.md)
         * [1) 环境准备](/article/mendix/widgets/开发组件前工具的准备.md)
         * [2) 开发组件之注意事项](https://note.youdao.com/ynoteshare1/index.html?id=8abc67538746213f182025deccc118ca&type=note)
-        * [3) Vue开发Mendix组件](/article/mendix/widgets/Vue_Mendix.md)
+        * [3) Vue开发Mendix组件模板](/article/mendix/widgets/Vue_Mendix.md)
         * [4) 组件进阶-详细API](/article/mendix/widgets/详细API.md)
         * [5) 组件进阶-常用API](/article/mendix/widgets/常用API.md)
 
