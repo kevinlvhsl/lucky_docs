@@ -1,10 +1,12 @@
 图片参考于这里
 
 ### Action的理解:
-> 1、action是用来触发reducer修改state的，触发的方式是使用dispatch;
-> 2、dispatch修改方式为{type:"唯一的type",...你的数据}
-> 3、默认情况只能使用同步方式dispatch，如果需要异步方式则需要引入第三方库redux-thunk;
-> 4、我们可以在react的component中调用action，来更新或者获取数据。
+
+1、action是用来触发reducer修改state的，触发的方式是使用dispatch;
+2、dispatch修改方式为{type:"唯一的type",...你的数据}
+3、默认情况只能使用同步方式dispatch，如果需要异步方式则需要引入第三方库redux-thunk;
+4、我们可以在react的component中调用action，来更新或者获取数据。
+
 ```
 //举个例子：global.js
 export const setDemo = demo => (dispatch, state) => {
@@ -37,10 +39,12 @@ export const getInfo = () => async (dispatch, getState) => {
 };
 ```
 ### Reducer的理解
-> 1、Reducer是一个纯函数，其作用就是通过返回一个新的state来达到修改state的目的；
-> 2、Reducer函数入参有两个：state，action；切记不要直接修改state和action；
-> 3、如果需要在一个对象中添加/修改一个key可以使用Object.assign()函数，但是此函数在部分浏览器中不支持；需要安装babel-polifill;
-> 4、Reducer中根据action的type不同来更新不同的state，所以建议将type抽离成一个单独的js文件，利于维护;
+
+1、Reducer是一个纯函数，其作用就是通过返回一个新的state来达到修改state的目的；
+2、Reducer函数入参有两个：state，action；切记不要直接修改state和action；
+3、如果需要在一个对象中添加/修改一个key可以使用Object.assign()函数，但是此函数在部分浏览器中不支持；需要安装babel-polifill;
+4、Reducer中根据action的type不同来更新不同的state，所以建议将type抽离成一个单独的js文件，利于维护;
+
 ```
 //一个例子 global.js
 const initState = {
