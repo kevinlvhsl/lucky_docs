@@ -120,3 +120,22 @@ var myObject = {
     name: "xxxx"
 }
 ```
+
+### 重绘和回流
+- **重绘的情况**
+    - 当元素样式的改变不影响布局时，浏览器将使用重绘对元素进行更新，
+
+- **回流的情况**
+    - 页面初次渲染
+    - 浏览器窗口大小改变
+    - 元素尺寸、位置、内容发生改变
+    - 元素字体大小变化
+    - 添加或者删除可见的 dom 元素
+    - 激活 CSS 伪类（例如：:hover）
+    - 查询某些属性或调用某些方法
+    clientWidth、clientHeight、clientTop、clientLeft
+    offsetWidth、offsetHeight、offsetTop、offsetLeft
+    scrollWidth、scrollHeight、scrollTop、scrollLeft
+    getComputedStyle()
+    getBoundingClientRect()
+    scrollTo()

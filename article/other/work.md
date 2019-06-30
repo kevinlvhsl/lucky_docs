@@ -14,15 +14,26 @@
 - instanceof 和typeof的区别
 - grid布局了解吗
 
+### CSS
+- css3有哪些新特效？
+- 怎样形成BFC？
 
-### 前端知识
+
+### Javascript
 - 跨越问题
 - 原型及原型链
 - 微任务与宏任务
+- 防抖和节流
+- 重绘和回流
+    - 引起回流有哪些情况?
+- 了解XSS和CSRF吗
+
+
+### Vue
 - Vue diff算法
 - Vue和React的区别
 - 介绍一下Vuex和Redux，Mobx
-- 了解XSS和CSRF吗
+
 
 
 ### 前端性能优化
