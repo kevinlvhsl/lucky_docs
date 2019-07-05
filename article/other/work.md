@@ -29,10 +29,43 @@
 - 重绘和回流
     - 引起回流有哪些情况?
 - 了解XSS和CSRF吗
-
+- 模块化发展简史知道吗？
+- 常用Javascript的那些设计模式？
+    - 单例设计模式
+    - 工厂设计模式
+    - 适配器设计模式
+    - 发布订阅模式
+    - 代理设计模式
+    - 策略设计模式
 ----
 
+
 ### Vue
+- vue的data属性为何为一个函数？
+
+- vue组件通信有哪些方式？
+    - props和$emit
+    - \$emit和$on
+    - vuex
+    - 中央事件总线
+    - provide和inject
+    - \$attr和$listener
+    - $parent,$children和ref
+
+- vue插槽了解吗？
+
+- vue混入mixin策略？
+
+- vue的extends和mixin有什么区别？
+
+- 
+
+
+- vue组件扩展
+    - 混入mixin
+    - 自定义指令
+    - 插件
+
 - Vue diff算法
 - Vue和React的区别
 - 介绍一下Vuex和Redux，Mobx
