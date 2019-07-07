@@ -83,6 +83,32 @@
 ### Android相关
 - Android生命周期
 
+- **Android跨进程通信的几种方式**
+    - **Intent方式**
+    ```
+    如调用系统通话应用
+    Intent callIntent=new Intent(Intent.ACTION_CALL,Uri.parse("tel:12345678");
+    startActivity(callIntent);
+    ```
+    - **Content Provider**
+    ```
+    ContentProvider（内容提供者）是Android中的四大组件之一。主要用于对外共享数据，也就是通过ContentProvider把应用中的数据共享给其他应用访问，其他应用可以通过ContentProvider对指定应用中的数据进行操作。ContentProvider分为系统的和自定义的，系统的也就是例如联系人，图片等数据。
+    ```
+    - **广播（Broadcast）**
+
+    - **AIDL（安卓接口定义语言）服务**
+
+
+    - **Messager通信**
+
+| 名称 | 优点 | 缺点 | 适用场景
+| ---- | ---- | ---- | ---- |
+| Bundle | 简单易用 | 只能传输Bundle支持的数据类型 | 四大组件之间的进程通信
+| 文件共享 | 简单易用 | 不适合高并发的情况，并且无法做到进程间的即时通信 | 无并发访问的情形，简单交换的数据实时性不高的场景
+| AIDL | 功能强大，支持一对多并发通信，只是实时通信 | 使用较为复杂，需要处理好线程同步 | 一对多通信且有RPC的需求
+| Messenger | 支持一对多的串行通信，支持实时通信 |不能很好处理高并发的情形，不支持RPC，数据通过Message进行传输，因此只能传输Bundle支持的数据类型 | 低并发的一对多即使通信，无RPC需求。
+| ContentProvider  |在数据源方法比较强大。支持一对多的高并发数据共享|  可以理解为受约束的AIDL | 一对多的进程间的数据共享
+| Socket | 功能强大，可以通过网络传输字节流，只是一对多并发实时通信 | 实现起来有点麻烦 | 网络数据交换
 
 - **Webview了解多少？**
     - Android通过webview调用js
