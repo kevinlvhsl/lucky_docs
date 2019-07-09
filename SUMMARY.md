@@ -38,6 +38,13 @@
 ----
 
 * [二、JavaScript](/article/javascript/README.md)
+    * [4. new A()和A()的区别](/article/javascript/new A()和A()的区别.md)
+    * [5. Javascript的变量提升和函数提升](/article/javascript/Javascript的变量提升和函数提升 .md	)
+    * [6. Javascript对闭包的理解](/article/javascript/Javascript对闭包的理解.md)
+    * [7. Object.create()和New的区别](/article/javascript/Object.create()和New的区别.md)
+    * [8. Javascript柯里化和偏函数实现](/article/javascript/Javascript柯里化和偏函数实现.md)
+    * [9. JavaScript中改变this指向有几种方式](/article/javascript/JavaScript中改变this指向有几种方式.md)
+    * [10. Javascript的call和apply和bind方法](/article/javascript/Javascript的call和apply和bind方法.md)
 
 ----
 
