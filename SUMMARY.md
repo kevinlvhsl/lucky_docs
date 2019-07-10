@@ -47,6 +47,8 @@
     * [10. JavaScript中改变this指向有几种方式](/article/javascript/JavaScript中改变this指向有几种方式.md)
     * [11. Javascript的call和apply和bind方法](/article/javascript/Javascript的call和apply和bind方法.md)
     * [12. Javascript的bind的polyfill的理解](/article/javascript/Javascript的bind的polyfill的理解.md)
+   
+    * [13. Javascript模块化发展AMD,CMD,CommonJS,UMD,ES6](/article/javascript/Javascript模块化发展AMD,CMD,CommonJS,UMD,ES6.md)
 
 ----
 
