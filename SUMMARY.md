@@ -46,7 +46,7 @@
     * [9. Javascript柯里化和偏函数实现](/article/javascript/Javascript柯里化和偏函数实现.md)
     * [10. JavaScript中改变this指向有几种方式](/article/javascript/JavaScript中改变this指向有几种方式.md)
     * [11. Javascript的call和apply和bind方法](/article/javascript/Javascript的call和apply和bind方法.md)
-    * [12. Javascript的call和apply和bind的polyfill的理解](/article/javascript/Javascript的call和apply和bind的polyfill的理解.md)
+    * [12. Javascript的bind的polyfill的理解](/article/javascript/Javascript的bind的polyfill的理解.md)
 
 ----
 
