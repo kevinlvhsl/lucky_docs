@@ -72,6 +72,7 @@ http.createService(...).listen(3000);
 
 ### requireJS的使用
 > 使用requireJS:用require.config()指定引用路径等，用define()定义模块，用require()加载模块。
+
 ```js
 //首先我们需要引入require.js文件和一个入口文件main.js。main.js中配置require.config()并规定项目中用到的基础模块。
 /** 网页中引入require.js及main.js **/
