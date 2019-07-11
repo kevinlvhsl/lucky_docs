@@ -54,6 +54,24 @@ if (!Function.prototype.bind) {
 }
 
 ```
+**理解1**
+```js
+ return fToBind.apply(this instanceof fBound
+                 ? this
+                 : oThis,
+                 aArgs.concat(Array.prototype.slice.call(arguments)));
+```
+> 这段代码会判断硬绑定函数是否是被new 调用，如果是的话就会使用新创建的this 替换硬绑定的this。
+那么，为什么要在new 中使用硬绑定函数呢？直接使用普通函数不是更简单吗？
+之所以要在new 中使用硬绑定函数，主要目的是预先设置函数的一些参数，这样在使用
+new 进行初始化时就可以只传入其余的参数。bind(..) 的功能之一就是可以把除了第一个
+参数（第一个参数用于绑定this）之外的其他参数都传给下层的函数（这种技术称为“部
+分应用”，是“柯里化”的一种）
+
+
+
+**理解2**
+
 > 其中如下代码作用和fBound.prototype=Object.create(this.prototype)作用一样，
 效果为：**生成的新函数(func)应该继承于原有函数(bFun)原型链**
 ```js
