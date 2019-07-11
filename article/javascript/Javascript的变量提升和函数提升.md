@@ -60,7 +60,25 @@ var funcName=new Function();
 ```
 
 > **只有函数声明方式采用函数作用域的提升**
+```js
+foo(); // 不是ReferenceError, 而是TypeError!
+var foo = function bar() {
+// ...
+};
+```
+> 这段程序中的变量标识符foo() 被提升并分配给所在作用域（在这里是全局作用域），因此
+foo() 不会导致ReferenceError。但是foo 此时并没有赋值（如果它是一个函数声明而不
+是函数表达式，那么就会赋值）。foo() 由于对undefined 值进行函数调用而导致非法操作，
+因此抛出TypeError 异常。
 
+> 同时也要记住，即使是具名的函数表达式，名称标识符在赋值之前也无法在所在作用域中
+```js
+foo(); // TypeError
+bar(); // ReferenceError
+var foo = function bar() {
+// ...
+};
+```
 例子：
 #### （1）变量提升
 ```js
