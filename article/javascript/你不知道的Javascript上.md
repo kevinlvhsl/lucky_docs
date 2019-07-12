@@ -1,4 +1,9 @@
-# 你不知道的JavaScript 上卷
+
+
+
+你不知道的JavaScript 上卷
+
+
 
 ## 第一部分 作用域和闭包
 
@@ -2060,7 +2065,7 @@ foo.call(obj); // 2
 
     一定要注意，有些调用可能在无意中使用默认绑定规则。如果想“更安全”地忽略this 绑
     定，你可以使用一个DMZ 对象，比如ø = Object.create(null)，以保护全局对象。
-    
+
     ES6 中的箭头函数并不会使用四条标准的绑定规则，而是根据当前的词法作用域来决定
     this，具体来说，箭头函数会继承外层函数调用的this 绑定（无论this 绑定到什么）。这
     其实和ES6 之前代码中的self = this 机制一样。
@@ -2944,11 +2949,22 @@ Another.count; // 1 (count不是共享状态)
 ### 第5章 原型
 
 #### 5.1 [[Prototype]]
+> *使用for..in 遍历对象时原理和查找[[Prototype]] 链类似，任何可以通过原型链访问到
+（并且是enumerable，参见第3 章）的属性都会被枚举*。`使用in 操作符来检查属性在对象中是否存在时，同样会查找对象的整条原型链（无论属性是否可枚举）`：
 
 ##### 5.1.1 Object.prototype
 
-##### 5.1.2 属性设置和屏蔽
+> 所有普通的[[Prototype]] 链最终都会指向内置的Object.prototype。由于所有的“普通”
+（内置，不是特定主机的扩展）对象都“源于”（或者说把[[Prototype]] 链的顶端设置为）
+这个Object.prototype 对象.
 
+![](https://user-gold-cdn.xitu.io/2019/2/24/1691fc878b9beefa?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+##### 5.1.2 属性设置和屏蔽
+> 如果属性名foo 既出现在myObject 中也出现在myObject 的[[Prototype]] 链上层， 那么就会发生屏蔽。
+
+> ，只读属性会阻止[[Prototype]] 链下层
+隐式创建（屏蔽）同名属性。这样做主要是为了模拟类属性的继承。
 
 
 #### 5.2 "类"
@@ -2956,31 +2972,238 @@ Another.count; // 1 (count不是共享状态)
 ##### 5.2.1 “类”函数
 
 ##### 5.2.2 “构造函数”
+> 函数不是构造函数，但是当且仅当使用new 时，函数调用会变成“构造函数调用”。
 
-##### 5.2.3 技术
+```js
+function Foo() {
+// ...
+}
+```
+> Foo 和你程序中的其他函数没有任何区别。函数本身并不是构造函数，然而，当你在普通的函数调用前面加上`new`关键字之后，就会把这个函数调用变成一个“构造函数调用”。实际上，**new 会劫持所有普通函数并用构造对象的形式来调用它**。
+
+##### 5.2.3 prototype改变导致constructor改变
+
+> Foo.prototype 的.constructor 属性只是Foo 函数在声明时的默认属性。**如果你创建了一个新对象并替换了函数默认的.prototype 对象引用，那么新对象并不会自动获.constructor 属性。**
+思考下面的代码：
+```js
+function Foo() { /* .. */ }
+Foo.prototype = { /* .. */ }; // 创建一个新原型对象
+var a1 = new Foo();
+a1.constructor === Foo; // false!
+a1.constructor === Object; // true!
+```
+Object(..) 并没有“构造”a1，对吧？看起来应该是Foo()“构造”了它。大部分开发者
+都认为是Foo() 执行了构造工作，但是问题在于，如果你认为“constructor”表示“由……
+构造”的话，a1.constructor 应该是Foo，但是它并不是Foo ！
+
+> a1 并没有.constructor 属性，所以它会委托[[Prototype]] 链上的Foo.
+prototype。但是这个对象也没有.constructor 属性（不过默认的Foo.prototype 对象有这
+个属性！），所以它会继续委托，这次会委托给委托链顶端的Object.prototype。这个对象
+有.constructor 属性，指向内置的Object(..) 函数。
 
 
+#### 5.3 （原型）继承(寄生式组合集成详解)
 
-#### 5.3 （原型）继承
-
-
+[请参考:寄生式组合继承详解](https://github.com/MrGaoGang/lucky_docs/blob/master/article/javascript/Javascript%E5%AF%84%E7%94%9F%E5%BC%8F%E7%BB%84%E5%90%88%E7%BB%A7%E6%89%BF%E8%AF%A6%E8%A7%A3.md)
 
 #### 5.4 对象关联
+```js
+function Foo() {
+// ...
+}
+Foo.prototype.blah = ...;
+var a = new Foo();
+```
+我们如何通过内省找出a 的“祖先”（委托关联）呢？第一种方法是站在“类”的角度来
+判断：
+```js
+a instanceof Foo; // true
+```
+instanceof 操作符的左操作数是一个普通的对象，右操作数是一个函数。instanceof 回答
+的问题是：**在a 的整条[[Prototype]] 链中是否有指向Foo.prototype 的对象？**
 
+可惜,**这个方法只能处理对象（a）和函数（带.prototype 引用的Foo）之间的关系。如果你想判断两个对象（比如a 和b）之间是否通过[[Prototype]] 链关联，只用instanceof无法实现**。
 
+判断两个对象的关联关系常用方法:
+1. b.isPrototypeOf( c );
+> 注意，这个方法并不需要使用函数（“类”），它直接使用b 和c 之间的对象引用来判断它
+们的关系
 
-##### 5.4.1 创建关联
-
-##### 5.4.2 关联关系是备用
-
-
-
-#### 5.5 小结
+2. Object.getPrototypeOf( a );接获取一个对象的[[Prototype]] 链
 
 
 
 ### 第6章 行为委托
 
+#### 6.3 对象关联
+**原型模式和对象关联实现继承的区别**
 
+```js
+。下面是典型的（“原型”）面向对象风格：
+function Foo(who) {
+    this.me = who;
+}
+Foo.prototype.identify = function() {
+    return "I am " + this.me;
+};
+function Bar(who) {
+    Foo.call( this, who );
+}
+Bar.prototype = Object.create( Foo.prototype );
+Bar.prototype.speak = function() {
+    alert( "Hello, " + this.identify() + "." );
+};
+var b1 = new Bar( "b1" );
+var b2 = new Bar( "b2" );
+b1.speak();
+b2.speak();
+```
+子类Bar 继承了父类Foo，然后生成了b1 和b2 两个实例。b1 委托了Bar.prototype，后者委托了Foo.prototype。这种风格很常见，你应该很熟悉了。
+下面我们看看如何使用对象关联风格来编写功能完全相同的代码：
+```js
+Foo = {
+    init: function(who) {
+    this.me = who;
+    },
+    identify: function() {
+    return "I am " + this.me;
+    }
+};
+Bar = Object.create( Foo );
+Bar.speak = function() {
+    alert( "Hello, " + this.identify() + "." );
+};
+var b1 = Object.create( Bar );
+b1.init( "b1" );
+var b2 = Object.create( Bar );
+
+b2.init( "b2" );
+b1.speak();
+b2.speak();
+```
+
+> 对象关联可以更好地支持关注分离（separation of concerns）原则，创建和初始化并不需要
+合并为一个步骤。
+
+
+
+#### 6.4 更好的语法
+> ES6 的class 语法可以简洁地定义类方法，这个特性让class 乍看起来更有吸引力（附录A 会介绍为什么要避免使用这个特性）：
+```js
+class Foo {
+methodName() { /* .. */ }
+}
+```
+
+**使用简洁方法methodName()存在的问题**
+
+```js
+
+var Foo = {
+    bar() { /*..*/ },
+    baz: function baz() { /*..*/ }
+};
+```
+> 由于函数对象本身没有名称标识符， 所以bar() 的缩写形式
+`（function()..）`实际上会变成一个匿名函数表达式并赋值给bar 属性
+
+`匿名函数没有name 标识符`，这会导致：
+1. 调试栈更难追踪；
+2. 自我引用（递归、事件（解除）绑定，等等）更难；
+3. 代码（稍微）更难理解。
+
+**简洁方法会存在第二个问题**
+
+> 如果你需要自我引用的话，那最好使用传统的具名函
+数表达式来定义对应的函数（ · baz: function baz(){..}· ），不要使用简洁方法。
+
+
+
+#### 6.5 内省
+
+1. 避免使用
+```js
+if (a1.something) {
+    a1.something();
+}
+```
+
+2. 推荐使用isPrototypeOf和getPrototypeOf
+```js
+// 让Foo 和Bar 互相关联
+Foo.isPrototypeOf( Bar ); // true
+Object.getPrototypeOf( Bar ) === Foo; // true
+// 让b1 关联到Foo 和Bar
+Foo.isPrototypeOf( b1 ); // true
+Bar.isPrototypeOf( b1 ); // true
+Object.getPrototypeOf( b1 ) === Bar; // true
+
+```
+
+### 附录 A
+
+### ES6 class语法糖
+
+```js
+class Widget {
+    constructor(width,height) {
+        this.width = width || 50;
+        this.height = height || 50;
+        this.$elem = null;
+    }
+render($where){
+    if (this.$elem) {
+        this.$elem.css( {
+        width: this.width + "px",
+        height: this.height + "px"
+        } ).appendTo( $where );
+        }
+    }
+}
+class Button extends Widget {
+    constructor(width,height,label) {
+        super( width, height );
+        this.label = label || "Default";
+        this.$elem = $( "<button>" ).text( this.label );
+    }
+    render($where) {
+        super( $where );
+        this.$elem.click( this.onClick.bind( this ) );
+    }
+    onClick(evt) {
+        console.log( "Button '" + this.label + "' clicked!" );
+    }
+}
+```
+
+**语法糖的优点**
+1. 不再引用杂乱的.prototype 了。
+2. Button 声明时直接“ 继承” 了Widget， 不再需要通过Object.create(..) 来替
+换.prototype 对象，也不需要设置.__proto__ 或者Object.setPrototypeOf(..)。
+3. 可以通过super(..) 来实现相对多态，这样任何方法都可以引用原型链上层的同名方
+法。这可以解决第4 章提到过的那个问题：构造函数不属于类，所以无法互相引用——super() 可以完美解决构造函数的问题。
+4. class 字面语法不能声明属性（只能声明方法）。
+5. 可以通过extends 很自然地扩展对象（子）类型，甚至是内置的对象（子）类型，比如
+rray 或RegExp。
+
+**语法糖存在的问题**
+1. `class并不会像传统面向类的语言一样在声明时静态复制所有行为`。如果你（有意或无意）修改或者替换了父“类”中的一个方法，那子“类”和所有实例都会受到影响，**因为它们在定义时并没有进行复制，只是使用基于[[Prototype]] 的实时委托**;
+
+2. 意外屏蔽问题。
+
+```js
+class C {
+    constructor(id) {
+        // 噢，郁闷，我们的id 属性屏蔽了id() 方法
+        this.id = id;
+    }
+    id() {
+        console.log( "Id: " + id );
+    }
+}
+var c1 = new C( "c1" );
+c1.id(); // TypeError -- c1.id 现在是字符串"c1
+
+```
 
 [参考:你不知道的JavaScript上卷](https://github.com/yygmind/Reading-Notes/edit/master/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript%E4%B8%8A%E5%8D%B7.md)
