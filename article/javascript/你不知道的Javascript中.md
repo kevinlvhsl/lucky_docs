@@ -412,6 +412,7 @@ false == []; // true -- 晕！
 > 我们需要比回调更好的机制。到目前为止,回调提供了很好的服务,但是未来的 JavaScript 需要更高级、功能更强大的异步模式。本书接下来的几章会深入探讨这些新型技术。
 
 
+
 ## 第3章 Promise
 ![](https://user-gold-cdn.xitu.io/2018/6/20/1641c3210ed1135d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 ![](https://user-gold-cdn.xitu.io/2018/6/20/1641c322b9dce156?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
@@ -438,7 +439,7 @@ false == []; // true -- 晕！
 
 > 如果使用多个参数调用 resovle(..) 或者 reject(..) ，第一个参数之后的所有参数都会被默默忽略。
 
-> 如果要传递多个值，你就必须要把它们封装在单个值中传递，比如通过一个数组或对象。
+> 如果要传递多个值，你就必须要把它们`封装在单个值中传递`，比如通过一个数组或对象。
 
 **特殊异常捕获**
 > 如果在 Promise 的创建过程中或在查看其决议结果过程中的任何时间点上出现了一个JavaScript 异常错 误，比如一个 TypeError 或 ReferenceError ，那这个异常就会被捕捉，且会使这个 Promise 被拒绝。
@@ -505,7 +506,7 @@ new Promise(function(resolve,reject){
     })
 }).
 .then(function(data){
-
+    //这个地方的值 就是上一个new Pormise的决议值(resolve)
 })
 
 ```
@@ -548,7 +549,90 @@ catch( handleErrors );
 ```
 
 
-### Promise 其他函数
+
+### Promise API (详解)
+
+#### new Promise(..) 构造器
+> 构造器 Promise(..) 必须和 new 一起使用，并且必须提供一个函数回调。这个回调是同步的或立即调用的。这
+个函数接受两个函数回调，用以支持 promise 的决议。通常我们把这两个函数称为 resolve(..) 和 reject(..)
+
+```js
+var p = new Promise( function(resolve,reject){
+// resolve(..)用于决议/完成这个promise
+// reject(..)用于拒绝这个promise
+} );
+```
+
+> reject(..) 就是拒绝这个 promise；但 `resolve(..) 既可能完成 promise，也可能拒绝`，要`根据传入参数而定`。
+- **如果传给resolve(..) 的是一个非 Promise、非 thenable 的立即值，这个 promise 就会用这个值完成**。
+- 如果传给 resolve(..) 的是一个真正的 Promise 或 thenable 值，`这个值就会被递归展开`，并且（要构造的）promise 将`取用其最终决议值或状态`。
+
+
+#### Promise.resolve(..) 和 Promise.reject(..)
+
+Promise.reject是使用new Pormise()中reject的快捷方式。
+```js
+//如下两种方式是等价的
+var p1 = new Promise( function(resolve,reject){
+reject( "Oops" );
+} );
+var p2 = Promise.reject( "Oops" );
+```
+> **Promise.resolve并不是完成，而是决议，有可能从pending到fulfilled或者rejected。**
+
+> Promise.resolve返回一个状态由给定value决定的Promise对象。`如果该值是thenable(即，带有then方法的对象)，返回的Promise对象的最终状态由then方法执行决定`；(见下面的then方法介绍)
+
+> `否则的话(该value为空，基本类型或者不带then方法的对象),返回的Promise对象状态为fulfilled，并且将该value传递给对应的then方法`。**通常而言，如果你不知道一个值是否是Promise对象，使用Promise.resolve(value) 来返回一个Promise对象,这样就能将该value以Promise对象形式使用**。
+
+> Promise.resolve和reject只能接收一个参数，如果需要传递多个参数请使用数组/对象包裹起来。
+
+```js
+// then(..) 接受一个或两个参数：第一个用于完成回调，第二个用于拒绝回调
+var fulfilledTh = {
+    then: function(cb) { cb( 42 ); }
+};
+var rejectedTh = {
+    then: function(cb,errCb) {
+        errCb( "Oops" );
+    }
+};
+var p1 = Promise.resolve( fulfilledTh );
+var p2 = Promise.resolve( rejectedTh );
+// p1是完成的promise
+```
+
+#### then()和catch
+
+> then(..) `接受一个或两个参数`：第一个用于完成`回调`，第二个用于`拒绝回调`。如果两者中的任何一个被省略或者作为非函数值传入的话，就会替换为相应的默认回调。`默认完成回调`只是`把消息传递下去`，而`默认拒绝回调则`只是`重新抛出`（传播）其接收到的`出错原因`。
+
+```js
+p.then( fulfilled );
+p.then( fulfilled, rejected );
+p.catch( rejected ); // 或者p.then( null, rejected )
+```
+
+- then和catch也会创建并返回一个新的promise，用于链式调用then，
+- 如果then中的fulfilled函数或者rejected中`抛出异常` ，那么返回的promise将会到`下一个then的rejected函数中`;
+- 如果then中返回一个`非thenable`(即带有then方法的对象),那么返回的值将会在`下一个then方法中的fulfilled中`；
+- 如果then返回的是一个`thenable或者promise`，那么具体调用下一个then的哪个方法，由thenable或promsie决定。
+
+```js
+new Promise(function(resolve,reject){
+    resolve("data");//非thenable，会到then的fulfilled中
+})
+.then(function fulfilled(res){
+    return new Promise(function(resolve,reject){//返回的是thenable
+        resolve("下一个");//调用下一个then的哪个方法由这个promise决定，此处为resolve，并且返回的是一个非thenable对象，那么就会调用下一个then方法的fulfilled，否则为thenable对象，会再次展开
+    })
+} ,function rejected(error){
+
+})
+.then(function fulfilled(){//到fulfilled还是rejected由上一个then决定
+
+},function rejected(error){
+
+})
+```
 
 #### 　Promise.all([ .. ])
 > 多个任务并行执行，。它们的完成顺序并不重要，但是必须都要完成，都执行完成后回调。
@@ -581,5 +665,67 @@ console.
 **与 Promise.all([ .. ]) 类似，一旦`有任何一个` Promise 决议为`完成`，Promise.race([ .. ]) 就会`完成`；一旦有任何一个 Promise 决议为`拒绝`，它就会`拒绝`**
 
 **要注意，永远不要递送空数组。**
+
+
+### Promise的局限性
+- 顺序错误处理
+> 在最后添加一个catch函数捕获异常
+- 单一值
+> resolve/rejected可以使用数组/对象包括；在fulfilled中使用对象解构{}或者数组解构[]获取值。
+- 单决议
+
+- 无法取消
+> 单独的 Promise 不应该可取消，但是取消一个可序列是合理的，因为你不会像对待 Promise 那样把序列作为一个单独的不变值来传送。
+
+### 以前的回调函数修改为Promise
+//之前使用回调函数，达到异步效果
+```js
+function foo(x,y,cb) {
+    ajax(
+    "http://some.url.1/?x=" + x + "&y=" + y,
+    cb
+    );
+}
+foo( 11, 31, function(err,text) {
+    if (err) {
+        console.error( err );
+    }
+    else {
+        console.log( text );
+    }
+} );
+
+```
+
+> 使用Promise封装一个包裹函数
+```js
+// polyfill安全的guard检查
+if (!Promise.wrap) {
+    Promise.wrap = function(fn) {
+        return function() {
+            var args = [].slice.call( arguments );
+            return new Promise( function(resolve,reject){
+                fn.apply(
+                null,
+                //args为实例调用时传入的所有参数，在最后加上一个回调函数，然后调用fn函数
+                args.concat( function(err,v){
+                    if (err) {
+                        reject( err );
+                    }
+                    else {
+                        resolve( v );
+                    }
+                } )
+                );
+            } );
+        };
+    };
+}
+
+//使用的时候，但是要求ajax回调函数必须为最后一个参数
+var request = Promise.wrap( ajax );
+request( "http://some.url.1/")//只传递需要的参数
+.then( .. )
+```
 
 [参考:精读《你不知道的javascript》中卷](https://juejin.im/post/5b2a07c16fb9a00e36425ef0)
