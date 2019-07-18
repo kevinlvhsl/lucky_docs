@@ -1,5 +1,7 @@
 
 
+此文章借阅了[精读《你不知道的javascript》中卷](https://juejin.im/post/5b2a07c16fb9a00e36425ef0)中的思维导图，十分感谢！
+
 # 第一部分 类型和语法
 ## 第1章 类型
 
@@ -412,7 +414,6 @@ false == []; // true -- 晕！
 > 我们需要比回调更好的机制。到目前为止,回调提供了很好的服务,但是未来的 JavaScript 需要更高级、功能更强大的异步模式。本书接下来的几章会深入探讨这些新型技术。
 
 
-
 ## 第3章 Promise
 ![](https://user-gold-cdn.xitu.io/2018/6/20/1641c3210ed1135d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 ![](https://user-gold-cdn.xitu.io/2018/6/20/1641c322b9dce156?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
@@ -728,4 +729,297 @@ request( "http://some.url.1/")//只传递需要的参数
 .then( .. )
 ```
 
+
+## 第6章 生成器
+![](https://user-gold-cdn.xitu.io/2018/6/20/1641c33279d14790?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![](https://user-gold-cdn.xitu.io/2018/6/20/1641c32dfa81cca0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![](https://user-gold-cdn.xitu.io/2018/6/20/1641c32feeacf0c8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+
+抱歉，此章看的是[阮一峰老师的es6 module](http://es6.ruanyifeng.com/?search=import&x=0&y=0#docs/generator)
+
+```js
+function* helloWorldGenerator() {
+  yield 'hello';
+  yield 'world';
+  return 'ending';
+}
+
+var hw = helloWorldGenerator();
+
+```
+里面重要的几个概念：
+- 一是，function关键字与函数名之间有一个星号；
+- 二是，函数体内部使用yield表达式
+- 三是，next()函数
+
+> 必须调用遍历器对象的next方法，使得指针移向下一个状态。也就是说，**每次调用next方法，内部指针就从函数头部或上一次停下来的地方开始执行，直到遇到下一个yield表达式（或return语句）为止**;
+
+```js
+hw.next()
+// { value: 'hello', done: false }
+hw.next()
+// { value: 'world', done: false }
+hw.next()
+// { value: 'ending', done: true }
+hw.next()
+// { value: undefined, done: true }
+```
+**每次调用遍历器对象的next方法，就会返回一个有着value和done两个属性的对象。value属性表示当前的内部状态的值，是yield表达式后面那个表达式的值；done属性是一个布尔值，表示是否遍历结束**
+
+- 一个函数里面，只能执行一次（或者说一个）return语句，但是可以执行多次（或者说多个）yield表达式
+
+- yield表达式`只能`用在 Generator 函数里面
+
+- yield表达式`如果`用`在`另一个`表达式之中`，`必须放在圆括号里面`
+
+```js
+function* demo() {
+  console.log('Hello' + yield); // SyntaxError
+  console.log('Hello' + yield 123); // SyntaxError
+
+  console.log('Hello' + (yield)); // OK
+  console.log('Hello' + (yield 123)); // OK
+}
+```
+
+### 生成器使用for ... of
+> for...of循环可以自动遍历 Generator 函数运行时生成的Iterator对象，且此时不再需要调用next方法。
+```js
+function* foo() {
+  yield 1;
+  yield 2;
+  yield 3;
+  yield 4;
+  yield 5;
+  return 6;
+}
+
+for (let v of foo()) {
+  console.log(v);
+}
+// 1 2 3 4 5
+
+```
+
+
+## 第5章 程序性能
+![](https://user-gold-cdn.xitu.io/2018/6/20/1641c33279d14790?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![](https://user-gold-cdn.xitu.io/2018/6/20/1641c334668ebefc?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+
+### Web Worker 启动多线程
+
+#### Work使用场景
+
+Web Worker 通常应用于哪些方面呢？
+- 处理密集型数学计算
+- 大数据集排序
+- 数据处理（压缩、音频分析、图像处理等）
+- 高流量网络通信
+
+#### Work创建及终止
+
+**实例化**
+
+```js
+//1. 实例化woker,
+var w1 = new Worker( "http://some.url.1/mycoolworker.js" );
+```
+
+- 这个 URL 应该`指向一个 JavaScript 文件的位置（`而不是一个 HTML 页面！），这个文件将被加载到一个 Worker 中。然后浏览器`启动一个独立的线程`，让这个文件在这个线程中作为独立的程序运行。
+
+- **如果浏览器中有两个或多个页面（或同一页上的多个 tab ！）试图从同一个文件 URL 创建 Worker，那么最终得到的实际上是完全独立的 Worker**
+
+**数据收发**
+> `Worke`r 之间以及它们和`主程序之间，`不会共享任何作用域或资源`，那会把所有多线程编程的噩梦带到前端领域，而是`通过`一个`基本的事件消息机制相互联系`;
+```js
+//2. 数据的获取（主线程发送消息给woker）
+w1.addEventListener( "message", function(evt){
+// evt.data
+} );
+
+//数据的发送(主线程收到woker的信息)
+w1.postMessage( "something cool to say" );
+
+// mydemo_woker.js
+//在worker内部，监听主线程发给自己的信息
+addEventListener( "message", function(evt){
+// evt.data
+} );
+//发送数据给主线程
+postMessage( "a really cool reply" );
+```
+**注意，专用 Worker 和创建它的程序之间是一对一的关系。**
+
+> 通常由`主页面`应用程序`创建 Worke`r，但`若是需要`的话，`Worker` 也可以`实例化`它自己的`子 Worker`，称为 subworker。有时候，把这样的细节委托给一个“主”Worker，由它来创建其他 Worker 处理部分任务，这样很有用。`不幸的是`，到写作本书时为
+止，`Chrome 还不支持 subworker`，不过 Firefox 支持。
+
+
+**Work的终止**
+
+```js
+//主页面手动终止
+w1.terminate();
+
+
+```
+>突然终止Worker 线程不会给它任何机会完成它的工作或者清理任何资源。这就类似于通过关闭浏览器标签页来关闭页面。
+
+
+
+#### Work运行环境及外部脚本加载
+
+> **Work不可以访问主程序的任何资源，不能访问dom或者其他资源，但是可以执行网络操 作（Ajax、WebSockets）以及设定定时 器。还 有，Worker 可以访问几个重要的全局变量和功能的本地复 本，包括 navigator 、location 、JSON 和 applicationCache**
+
+
+**可以通过 importScripts(..) 向 Worker 加载额外的 JavaScript 脚本：**
+```js
+// 在Worker内部
+importScripts( "foo.js", "bar.js" );
+```
+**这些脚本加载是同步的。也就是说，importScripts(..) 调用会阻塞余下 Worker 的执行，直到文件加载和执行完成。**
+
+#### Work数据传递
+
+在`早期`的 Worker 中，唯一的选择就是把`所有数据序列化到一个字符串值中`，然后使用postMessage发送并使用addEventListener("message")的方式获取数据
+
+**方法一：使用Transferable对象**
+> 特别是对于大数据集而言，就是`使用 Transferable 对象` （http://updates.html5rocks.com/2011/12/Transferable-Objects-Lightning-Fast ）。
+
+- 这时发生的是对象所有权的转移，数据本身并没有移动。一旦你把对象传递到一个 Worker 中，在原来的位置上，它就变为空的或者是不可访问的，这样就消除了多线程编程作用域共享带来的混乱。当然，所有权传递是可以双
+向进行的。
+- 如果`选择 Transferable 对象`的话，其实不需要做什么。任何`实现了 Transferable 接口`（http://developer.mozilla.org/en-US/docs/Web/API/Transferable ）`的数据结构就自动按照这种方式传输`（Firefox 和 Chrome 都支持）。
+
+**使用结构化克隆算法**
+
+> 如果要传递一个对象，可以使用结构化克隆算法 （structured clone algorithm）（https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/The_structured_clone_algorithm ）把这个对象复制到另一边。这个`算法非常高级`，甚至`可以处理`要复制的对象有`循环引用`的情况。这样就不用付出 to-string 和 from-string 的性能损失了，但是这种方案还是要`使用双倍的内存`。`IE10 及更高版本以及所有其他主流浏览器都支持这种方案`。
+
+
+#### 共享Worker
+> 常见情况：前面已经讲过每一个worker是独立的，但为了节省系统资源（在这一方面最常见的有限资源就是 socket 网络连接，因为浏览器限制了到同一个主机的同时连接数目。（2-8个之间，通常为6个））
+
+
+**主页面实例化共享Woker**
+```js
+//创建一个整个站点或 app 的所有页面实例都可以共享的中心 Worker
+var w1 = new SharedWorker( "http://some.url.1/mycoolworker.js" );
+
+
+
+
+/**
+因为共享 Worker 可以与站点的多个程序实例或多个页面连接，所以这个 Worker 需要通过某种方式来得知消息来自于哪个程
+序。这个唯一标识符称为端口 （port），可以类比网络 socket 的端口。因此，调用程序必须使用 Worker 的 port 对象用于通
+信：
+**/
+w1.port.addEventListener( "message", handleMessages );
+// ..
+w1.port.postMessage( "something cool" );
+
+// 端口连接必须要初始化
+w1.port.start();
+
+```
+**共享Worker内部**
+
+> 共享 Worker 内部，`必须要处理额外的一个事件："connect"` 。这个事件为这个特定的连接提供了端口对象。保持多个连接独立的最简单办法就是使用 port 上的闭包
+
+```js
+// 在共享Worker内部
+addEventListener( "connect", function(evt){
+    // 这个连接分配的端口
+    var port = evt.ports[0];
+    port.addEventListener( "message", function(evt){
+        // ..
+        port.postMessage( .. );
+        // ..
+    } );
+    // 初始化端口连接
+    port.start();
+} );
+
+```
+
+**共享Worker和Worker的区别**
+
+> **如果有某个端口连接终止而其他端口连接仍然活跃，那么共享 Worker 不会终止。而对专用 Worker 来说，只要到实例化它的程序的连接终止，它就会终止**
+
+
+#### Worker的模拟
+
+- http://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills#web-workers 上列出了一些实现
+
+- https://gist.github.com/getify/1b26accb1a09aa53ad25
+
+
+### 单指令多数据 SIMD
+> 单指令多数据（SIMD）是一种数据并行 （data parallelism）方式，与 Web Worker 的任务并行 （task parallelism）相对，因为这
+里的重点实际上不再是把程序逻辑分成并行的块，而是并行处理数据的多个位。
+**应用在：做并行数学处理；数据密集型的应用（信号分析、关于图形的矩阵运算，等等）**
+对于可用的 SIMD 功能（http://github.com/johnmccutchan/ecmascript_simd ），有一个官方的（有希望的、值得期待的、面向未来的）prolyfill，
+
+
+### asm.js
+> asm.js 描述了 JavaScript 的一个很小的子集，它避免了 JavaScript 难以优化的部分（比如垃圾收集和强制类型转换），并
+且让 JavaScript 引擎识别并通过激进的优化运行这样的代码。可以手工编写 asm.js，但是会极端费力且容易出错，类似于手写
+汇编语言（这也是其名字的由来）。实际上，asm.js 也是高度优化的程序语言交叉编译的一个很好的目标，比如 Emscripten 把
+C/C++ 转换成 JavaScript（https://github.com/kripken/emscripten/wiki ）。
+
+
+## 第6章 微性能测试和调优
+
+![](https://user-gold-cdn.xitu.io/2018/6/20/1641c336f145c542?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+### 性能测试
+
+1. 使用[Benchmark.js](http://benchmarkjs.com/)
+
+与其打造你自己的统计有效的性能测试逻辑,不如直接使用 Benchmark.js 库,它已经为你 实现了这些。但是,编写测试要小心,因为我们很容易就会构造一个看似有效实际却有缺 陷的测试,即使是微小的差异也可能扭曲结果,使其完全不可靠。
+
+> 如果你想要对你的代码进行功能测试和性能测试，这个库应该最优先考
+虑。
+//一个简单例子
+```js
+
+function foo() {
+// 要测试的运算
+}
+var bench = new Benchmark(
+    "foo test", // 测试名称
+    foo, // 要测试的函数（也即内容）
+    {
+    // .. // 可选的额外选项（参见文档）
+    }
+);
+bench.hz; // 每秒运算数
+bench.stats.moe; // 出错边界
+bench.stats.variance; // 样本方差
+```
+
+
+2. jsPerf.com
+
+从尽可能多的环境中得到尽可能多的测试结果以消除硬件/ 设备的偏差, 这一点很重要。 jsPerf.com 是很好的网站,用于众包性能测试运行。
+
+一个比较以下几种转换数字性能的例子:
+[点击这里看代码测试例子](https://jsperf.com/js-test-demo)
+```js
+var x = "42"; // 需要数字42
+// 选择1：让隐式类型转换自动发生
+var y = x / 2;
+// 选择2：使用parseInt(..)
+var y = parseInt( x, 0 ) / 2;
+// 选择3：使用Number(..)
+var y = Number( x ) / 2;
+// 选择4：使用一元运算符+
+var y = +x / 2;
+// 选项5：使用一元运算符|
+var y = (x | 0) / 2;
+
+```
+
+尾调用优化是 ES6 要求的一种优化方法。它使 JavaScript 中原本不可能的一些递归模式变 得实际。 TCO 允许一个函数在结尾处调用另外一个函数来执行,不需要任何额外资源。这意味着,对递归算法来说,引擎不再需要限制栈深度。
+
+
 [参考:精读《你不知道的javascript》中卷](https://juejin.im/post/5b2a07c16fb9a00e36425ef0)
+[参考：ECMAScript6 入门](http://es6.ruanyifeng.com/?search=import&x=0&y=0#docs/generator)
