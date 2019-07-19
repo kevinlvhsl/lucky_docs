@@ -81,6 +81,7 @@ var foo = function bar() {
 ```
 例子：
 #### （1）变量提升
+
 ```js
 
 demo();//结果为:undefined
@@ -101,6 +102,7 @@ age=20;
 ```
 
 #### （2）相同函数名变量提升
+
 ```js
 function demo(){
   console.log("我是第一个函数啊")
@@ -122,7 +124,8 @@ demo()//调用第二个demo函数
 ```
 
 #### （3）函数名和变量名冲突：函数名优先级高(函数优先)
-```
+
+```js
 
 console.log(demo);
 
