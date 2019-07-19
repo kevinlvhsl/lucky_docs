@@ -47,16 +47,25 @@ if (typeof Object.create !== "function") {
 function _new_ (){
   var obj = {},
    
-  Constructor = [].shift.call(arguments);
+  Constructor = [].shift.call(arguments);//第一个参数为要new的那个对象
 
-  obj.__proto__ = Constructor.prototype;
+  obj.__proto__ = Constructor.prototype;//得到对象的原型
 
-  var ret = Constructor.apply(obj, arguments);
+  var ret = Constructor.apply(obj, arguments);//将this绑定到新的对象上,arguments已经移除了第一个参数，那么后续的入参为对象的入参
 
   return typeof ret === 'object' ? ret : obj;
 }
+//测试
+function Demo(name,age){
+    this.name=name;
+    this.age=age;
+}
+
+var demo=_new_(Demo,'mrgao',20);
+console.log(demo);
 
 ```
+
 
 
 ### New和Object.create()的区别
