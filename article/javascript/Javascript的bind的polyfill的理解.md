@@ -74,6 +74,7 @@ new 进行初始化时就可以只传入其余的参数。bind(..) 的功能之�
 
 > 其中如下代码作用和fBound.prototype=Object.create(this.prototype)作用一样，
 效果为：**生成的新函数(func)应该继承于原有函数(bFun)原型链**
+
 ```js
 
  fNOP    = function() {},
