@@ -77,9 +77,9 @@ const curry=function(fn,...args){
         _args.push(argsIn);
         if(argsIn.length===0){
             all=[];
-            fn.apply(this,_args);
+           return fn.apply(this,_args);
         }else{
-            curry.call(this,fn,..._args);
+          return  curry.call(this,fn,..._args);
         }
     }
 
