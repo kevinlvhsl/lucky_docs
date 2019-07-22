@@ -5,14 +5,14 @@
 ```js
 
 function Foo(name) {
-this.name = name;
+  this.name = name;
 }
 Foo.prototype.myName = function() {
-return this.name;
+  return this.name;
 };
 function Bar(name,label) {
-Foo.call( this, name );
-this.label = label;
+  Foo.call( this, name );
+  this.label = label;
 }
 // 我们创建了一个新的Bar.prototype 对象并关联到Foo.prototype
 Bar.prototype = Object.create( Foo.prototype );
@@ -20,7 +20,7 @@ Bar.prototype = Object.create( Foo.prototype );
 // 如果你需要这个属性的话可能需要手动修复一下它
 Bar.prototype.constructor=Bar;
 Bar.prototype.myLabel = function() {
-return this.label;
+  return this.label;
 };
 var a = new Bar( "a", "obj a" );
 a.myName(); // "a"
@@ -41,8 +41,7 @@ a.myLabel(); // "obj a"/
 
 
 **为什么不使用Bar.prototype=Foo.prototype?**
-> Bar.prototype = Foo.prototype 并不会创建一个关联到Bar.prototype 的新对象，它只是让Bar.prototype 直接引用Foo.prototype 对象。因此当你执行类似Bar.prototype.
-myLabel = ... 的赋值语句时会直接修改Foo.prototype 对象本身。
+> Bar.prototype = Foo.prototype 并不会创建一个关联到Bar.prototype 的新对象，它只是让Bar.prototype 直接引用Foo.prototype 对象。因此当你执行类似Bar.prototype.myLabel = ... 的赋值语句时会直接修改Foo.prototype 对象本身。
 
 > 简单来说：**如果使用这样的形式，那么修改Bar.prototype就会影响到Foo.prototype，会影响到Foo关联的对象**；
 
@@ -50,8 +49,7 @@ myLabel = ... 的赋值语句时会直接修改Foo.prototype 对象本身。
 > 上面讲了，Foo.call()可以解决实例a，继承Foo函数内部的属性，但是无法继承Foo的原型链；所以需要修改Bar.prototype；
 > 使用Bar.prototype=new Foo();理论上是可以的，但是会造成两个副作用
 1. **Foo函数被重复调用**。使用Foo.call已经调用了一次，再次使用new Foo，其构造函数会再次被调用；
-2. 如果函数Foo 有一些副作用（比如写日志、修改状态、注
-册到其他对象、给this 添加数据属性，等等）的话，就会影响到Bar() 的“后代”，后果不堪设想。
+2. 如果函数Foo 有一些副作用（比如写日志、修改状态、注册到其他对象、给this 添加数据属性，等等）的话，就会影响到Bar() 的“后代”，后果不堪设想。
 
 
 **为什么使用Object.create?**
