@@ -71,6 +71,7 @@
 - Vue和React的区别
 - 介绍一下Vuex和Redux，Mobx
 
+- React中Mobx autorun和reaction的区别
 
 ----
 ### 前端性能优化
