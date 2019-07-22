@@ -137,6 +137,7 @@ console.log(getName2()) // undefined
 
 
 再看另一个例子，document.getElementById这个方法名实在有点过长，我们大概尝试过用一个短的函数来代替它，如同prototype.js等一些框架所做过的事情:
+
 ```js
 var getId = function (id) {
   return document.getElementById(id);
@@ -145,20 +146,24 @@ var getId = function (id) {
 getId('div1');
 ```
 我们也许思考过为什么不能用下面这种更简单的方式
+
 ```js
 var getId = document.getElementById;
 getId( 'div1' );
 ```
 现在不妨花1分钟时间，让这段代码在浏览器中运行一次
+
  ```js      
 <div id="div1">我是一个div</div>
 
 var getId = document.getElementById;
 getId( 'div1' );
 ```
+
 > 在chrome friefox IE10 中执行过后就会发现，这段代码抛出一个异常,这是因为很多引擎的document.getElementById 方法的内部实现中需要用到this，这个this本来被期望指向document，当getElementById方法作为document对象的属性被调用时，方法内部的this确实是指向document的。
 但是当getId来引用document,getElementById之后，再调用getId，此时就成了普通的函数调用了，函数内部的this指向了window，而不是原来的document。
 我们可以尝试利用apply把document当做this传递给getId函数，修正 this指向问题。
+
 ```js
 document.getElementById = (function(func){
   return function(){
