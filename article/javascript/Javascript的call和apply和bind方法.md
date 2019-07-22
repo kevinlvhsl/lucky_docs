@@ -3,7 +3,7 @@
 > call、apply、bind方法的共同点和区别：apply 、 call 、bind 三者都是用来改变函数的this对象的指向的；apply 、 call 、bind 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本次调用的上下文（context）——这就是this关键字的值。）；apply 、 call 、bind 三者都可以利用后续参数传参；
 
 > 区别：bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用 。
-
+>  call() 、apply()可以看作是某个对象的方法，通过调用方法的形式来间接调用函数。bind() 就是将某个函数绑定到某个对象上
 一个例子：
 
 ```
