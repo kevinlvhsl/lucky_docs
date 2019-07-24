@@ -72,6 +72,7 @@
 - 介绍一下Vuex和Redux，Mobx
 
 - React中Mobx autorun和reaction的区别
+- React中Mobx computed和autorun的区别
 
 ----
 ### 前端性能优化
