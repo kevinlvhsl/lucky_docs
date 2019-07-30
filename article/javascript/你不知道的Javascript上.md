@@ -3145,6 +3145,7 @@ Object.getPrototypeOf( b1 ) === Bar; // true
 
 ### ES6 class语法糖
 
+
 ```js
 class Widget {
     constructor(width,height) {
@@ -3175,6 +3176,7 @@ class Button extends Widget {
         console.log( "Button '" + this.label + "' clicked!" );
     }
 }
+
 ```
 
 **语法糖的优点**
