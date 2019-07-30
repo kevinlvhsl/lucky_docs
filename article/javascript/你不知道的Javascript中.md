@@ -381,6 +381,7 @@ false == []; // true -- 晕！
 0 == []; // true -- 晕！
 ```
 
+
 ## 第5章  语法
 ![](https://user-gold-cdn.xitu.io/2018/6/20/1641c313229058fc?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 ![](https://user-gold-cdn.xitu.io/2018/6/20/1641c315bee42707?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
@@ -680,6 +681,7 @@ console.
 
 ### 以前的回调函数修改为Promise
 //之前使用回调函数，达到异步效果
+
 ```js
 function foo(x,y,cb) {
     ajax(
@@ -699,6 +701,7 @@ foo( 11, 31, function(err,text) {
 ```
 
 > 使用Promise封装一个包裹函数
+
 ```js
 // polyfill安全的guard检查
 if (!Promise.wrap) {
@@ -785,6 +788,7 @@ function* demo() {
 
 ### 生成器使用for ... of
 > for...of循环可以自动遍历 Generator 函数运行时生成的Iterator对象，且此时不再需要调用next方法。
+
 ```js
 function* foo() {
   yield 1;
@@ -801,6 +805,7 @@ for (let v of foo()) {
 // 1 2 3 4 5
 
 ```
+
 
 
 ## 第5章 程序性能
@@ -833,6 +838,7 @@ var w1 = new Worker( "http://some.url.1/mycoolworker.js" );
 
 **数据收发**
 > `Worke`r 之间以及它们和`主程序之间，`不会共享任何作用域或资源`，那会把所有多线程编程的噩梦带到前端领域，而是`通过`一个`基本的事件消息机制相互联系`;
+
 ```js
 //2. 数据的获取（主线程发送消息给woker）
 w1.addEventListener( "message", function(evt){
@@ -874,6 +880,7 @@ w1.terminate();
 
 
 **可以通过 importScripts(..) 向 Worker 加载额外的 JavaScript 脚本：**
+
 ```js
 // 在Worker内部
 importScripts( "foo.js", "bar.js" );
