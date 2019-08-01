@@ -53,7 +53,7 @@
     * [13. Javascript的bind的polyfill的理解](/article/javascript/Javascript的bind的polyfill的理解.md)
     * [14. Javascript模块化发展AMD,CMD,CommonJS,UMD,ES6](/article/javascript/Javascript模块化发展AMD,CMD,CommonJS,UMD,ES6.md)
     * [15. Javascript寄生式组合继承详解](/article/javascript/Javascript寄生式组合继承详解.md)
-
+    * [16. JavaScript我必须知道的系列](/article/javascript/JavaScript我必须知道的系列.md)
    
 ----
 
