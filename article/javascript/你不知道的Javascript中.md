@@ -487,15 +487,15 @@ request( "http://some.url.1/" )
         // 来自foo.bar()的错误TypeError
         return 42;
     }
-) // 步
-骤
-4：
+) // 步骤4：
 .then( function(msg){
-console.
+console.log(msg)
+)}
 ```
 
 **如果完成或拒绝处理函数返回一个 Promise，它将会被展开，这样一来，不管它的决议值(resolve)是什么，都会成为当前then(..) 返回的链接 Promise 的决议(resolve)值**
 > 如果需要步骤二，在步骤一处理完成处理，你可以在步骤一手动返回一个promise
+
 ```js
 new Promise(function(resolve,reject){
     //do something
@@ -517,6 +517,7 @@ new Promise(function(resolve,reject){
 
 > reject(..) 不会像 resolve(..) 一样进行展开。如果向 reject(..) 传入一个 Promise/thenable 值，它会把
 这个值原封不动地设置为拒绝理由。`后续的拒绝处理函数接收到的是你实际传给 reject(..) 的那个Promise/thenable，而不是其底层的立即值`。
+
 ```js
 var rejec = new Promise( function(resolve,reject){
     // 用一个被拒绝的promise完成这个promise
@@ -539,6 +540,7 @@ promise。因此，进入 p 的错误以及 p 之后进入其决议(resolve)（�
 
 > 遗留的问题：要是在catch中还存在异常咋办
 handleErrors(..)
+
 ```js
 var p = Promise.resolve( 42 );
 p.then(
