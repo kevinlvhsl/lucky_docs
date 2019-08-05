@@ -2,12 +2,12 @@
 
 ### Action的理解:
 
-1、action是用来触发reducer修改state的，触发的方式是使用dispatch;
-2、dispatch修改方式为{type:"唯一的type",...你的数据}
-3、默认情况只能使用同步方式dispatch，如果需要异步方式则需要引入第三方库redux-thunk;
-4、我们可以在react的component中调用action，来更新或者获取数据。
+1. action是用来触发reducer修改state的，触发的方式是使用dispatch;
+2. dispatch修改方式为{type:"唯一的type",...你的数据}
+3. 默认情况只能使用同步方式dispatch，如果需要异步方式则需要引入第三方库redux-thunk;
+4. 我们可以在react的component中调用action，来更新或者获取数据。
 
-```
+```js
 //举个例子：global.js
 export const setDemo = demo => (dispatch, state) => {
   dispatch({
@@ -40,12 +40,12 @@ export const getInfo = () => async (dispatch, getState) => {
 ```
 ### Reducer的理解
 
-1、Reducer是一个纯函数，其作用就是通过返回一个新的state来达到修改state的目的；
-2、Reducer函数入参有两个：state，action；切记不要直接修改state和action；
-3、如果需要在一个对象中添加/修改一个key可以使用Object.assign()函数，但是此函数在部分浏览器中不支持；需要安装babel-polifill;
-4、Reducer中根据action的type不同来更新不同的state，所以建议将type抽离成一个单独的js文件，利于维护;
+1. Reducer是一个纯函数，其作用就是通过返回一个新的state来达到修改state的目的；
+2. Reducer函数入参有两个：state，action；切记不要直接修改state和action；
+3. 如果需要在一个对象中添加/修改一个key可以使用Object.assign()函数，但是此函数在部分浏览器中不支持；需要安装babel-polifill;
+4. Reducer中根据action的type不同来更新不同的state，所以建议将type抽离成一个单独的js文件，利于维护;
 
-```
+```js
 //一个例子 global.js
 const initState = {
   userInfo: {},
@@ -84,7 +84,8 @@ export default rootReducer;
 > 使用Reducer 创建全局唯一的store：将各个Reducer返回的state通过combineReducer合并在在一起（这就是下面【 如何在react中使用state和action】） //为什么使用@connect的第一参数可以使用...state.home来获取home的reducer的state；
 
 > combineReducers 辅助函数的作用是，把一个由多个不同 reducer 函数作为 value 的 object，合并成一个最终的 reducer 函数;
-```
+
+```js
 const store = createStore( combineReducers({ routing: routerReducer, ...rootReducer }), composeWithDevTools(applyMiddleware(...middlewares)) );
 
 
@@ -120,7 +121,8 @@ render(App);
 ```
 ### 如何在react中使用state和action？
 使用之前需要引入第三方库react-redux；
-```
+
+```js
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
