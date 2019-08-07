@@ -32,7 +32,7 @@ export const getInfo = () => async (dispatch, getState) => {
         resolve({ title: 'React App' });
       }, 1000);
     });
-    await dispatch(receiveHome(response));
+    await dispatch(receiveInfo (response));
     return response;
   } catch (error) {
     console.log('error: ', error);
