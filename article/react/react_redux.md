@@ -9,19 +9,21 @@
 
 ```js
 //举个例子：global.js
+//一个thunk
 export const setDemo = demo => (dispatch, state) => {
-  dispatch({
+  dispatch({//执行一个action
     type: "GLOABLE_DEMO",
     demo: demo
   });
 };
 
-//home.js中使用异步方式请求
+//home.js中使用异步方式请求 （一个action）
 const receiveInfo = response => ({
   type: 'RECEIVE_HOME',
   homeInfo: response
 });
 
+//使用redux-thunk异步执行action
 export const getInfo = () => async (dispatch, getState) => {
   try {
     const response = await new Promise((resolve, reject) => {
