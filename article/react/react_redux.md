@@ -1,4 +1,14 @@
+
+
+redux 的核心思想为：
+- 将需要修改的 state 都存入到 store 里，
+- 发起一个 action 用来描述发生了什么，用 reducers 描述 action 如何改变 state 。
+- 使用dispatch触发action
+
+
+
 图片参考于这里
+![](https://upload-images.jianshu.io/upload_images/5004111-88b1247ff5fa6c30.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
 
 ### Action的理解:
 
@@ -10,7 +20,7 @@
 
 ```js
 //举个例子：global.js
-//一个thunk
+//一个异步action 
 export const setDemo = demo => (dispatch, state) => {
   dispatch({//执行一个action
     type: "GLOABLE_DEMO",
@@ -18,7 +28,7 @@ export const setDemo = demo => (dispatch, state) => {
   });
 };
 
-//home.js中使用异步方式请求 （一个action）
+//home.js中一个action creator
 const receiveInfo = response => ({
   type: 'RECEIVE_HOME',
   homeInfo: response
@@ -36,7 +46,7 @@ export const getInfo = () => async (dispatch, getState) => {
         resolve({ title: 'React App' });
       }, 1000);
     });
-    await dispatch(receiveInfo (response));
+    await dispatch(receiveInfo (response));//在异步action调用dispatch()触发reducer更新state
     return response;
   } catch (error) {
     console.log('error: ', error);
