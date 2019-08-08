@@ -1,6 +1,6 @@
 
 
-redux 的核心思想为：
+**redux 的核心思想为：**
 - 将需要修改的 state 都存入到 store 里，
 - 发起一个 action 用来描述发生了什么，用 reducers 描述 action 如何改变 state 。
 - 使用dispatch触发action
@@ -185,28 +185,31 @@ getInfo().then(res=>res.json()).then(da=>{
 })
 connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
 ```
-1、mapStateToProps（state, ownProps）
+
+### 其他的理解
+
+1、**mapStateToProps（state, ownProps）**
 
 > mapStateToProps是一个函数，用于建立组件跟 store 的 state 的映射关系 作为一个函数，它可以传入两个参数，结果一定要返回一个 object
 传入mapStateToProps之后，会订阅store的状态改变，在每次 store 的 state 发生变化的时候，都会被调用
 ownProps代表组件本身的props，如果写了第二个参数ownProps，那么当prop发生变化的时候，mapStateToProps也会被调用。例如，当 props接收到来自父组件一个小小的改动，那么你所使用的 ownProps 参数，mapStateToProps 都会被重新计算）。
 mapStateToProps可以不传，如果不传，组件不会监听store的变化，也就是说Store的更新不会引起UI的更新；
 
-2、 mapDispatchToProps(dispatch)
+2、 **mapDispatchToProps(dispatch)**
 
 > 如果mapDispatchToProps是一个对象，那么每个定义在该对象的函数都将被当作 Redux action creator，对象所定义的方法名将作为属性名；每个方法将返回一个新的函数，函数中dispatch方法会将 action creator 的返回值作为参数执行。这些属性会被合并到组件的 props 中
 
 > 如果mapDispatchToProps是函数类型的：该函数将接收一个 dispatch 函数，然后由你来决定如何返回一个对象，`这个对象通过 dispatch 函数与 action creator 以某种方式绑定在一起`（提示：你也许会用到 Redux 的辅助函数 bindActionCreators()。`如果你省略这个 mapDispatchToProps 参数`，默认情况下，`dispatch 会注入到你的组件 props 中`。如果指定了该回调函数中第二个参数 ownProps，该参数的值为传递到组件的 props，而且只要组件接收到新 props，mapDispatchToProps 也会被调用。
 
 
-3、bindActionCreators(actionCreators, dispatch)
+3、**bindActionCreators(actionCreators, dispatch)**
 
 bindActionCreators通常和mapDispatchToProps一起使用
 
 - actionCreators (Function or Object): 一个 action creator，或者一个 value 是 action creator 的对象。第一个参数可以接收一个action creator或者一个action creator的对象，这些action将会注入到对应组件的Props中
 - dispatch (Function): 一个由 Store 实例提供的 dispatch 函数。`一般这个dispatch是由函数式的mapDispatchToProps的参数提供`
 
-4、 action creator是什么？
+4、 **action creator是什么？**
 
 一般情况一个action其实就是一个含有type属性的对象{type:"HONE_CHANGE",other:""}，
 - `action creator其实是一个返回action的函数。`
@@ -221,5 +224,4 @@ createActionCreator(info){
     other:info
   }
 }
-
-``
+```
