@@ -145,3 +145,40 @@ class EventEmitter {
   }
 }
 ```
+
+
+### 实现 Promise.finally
+
+```js
+//finally 方法用于指定不管 Promise 对象最后状态如何，都会执行的操作，使用方法如下
+Promise
+	.then(result => { ··· })
+	.catch(error => { ··· })
+	.finally(() => { ··· })
+
+```
+
+finally 特点：
+
+- 不接收任何参数。
+- finally 本质上是 then 方法的特例。
+
+```js
+Promise.prototype.finally = function (callback) {
+  let P = this.constructor
+  return this.then(
+    value  => P.resolve(callback()).then(() => value),
+    reason => P.resolve(callback()).then(() => { throw reason })
+  )
+}
+
+```
+
+
+
+
+
+### 参考
+
+- [记录面试中一些回答不够好的题（Vue 居多） | 掘金技术征文](https://juejin.im/post/5a9b8417518825558251ce15)
+- [中级前端工程师必须要掌握的 28 个 JavaScript 技巧](https://juejin.im/post/5cef46226fb9a07eaf2b7516#heading-23)
