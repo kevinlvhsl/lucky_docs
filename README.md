@@ -23,7 +23,7 @@
     * [雷达图](/article/oview/chart/radar.md)
     * [散点图和气泡图](/article/oview/chart/point.md)
     * [面积图](/article/oview/chart/area.md)
-
+    * [图表平移/缩放](/article/oview/chart/intercation.md)
 
 
 
