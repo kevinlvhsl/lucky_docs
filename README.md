@@ -1,8 +1,9 @@
 ## 高先生的博客
 
-<a  href="mrgaogang.github.io">
+<a  href="http://mrgaogang.github.io">
 <img src="https://img.shields.io/badge/%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-https%3A%2F%2Fmrgaogang.github.io-red"/>
 </a>
+
 
 > 是否感谢大家来到我的个人博客，俗话说“好记性不如烂笔头”，在互联网高速发展的今天，主动学习成为一个必备技能。个人主要从事Mendix，Vue，Android开发的相关工作，由于最近工作的原因Android接触较少，请大家见谅。
 
