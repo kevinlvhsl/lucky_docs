@@ -18,6 +18,7 @@ module.exports = {
         editLinkText: '帮助我们改进页面内容！',
         nav: nav,
         sidebar: 'auto',
+        sidebarDepth: 2,
         "/oview/index": {
             sidebar: [{
                     title: 'Group 1',
