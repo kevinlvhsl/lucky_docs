@@ -1,9 +1,9 @@
-此文源码案例:[欢迎Star](https://github.com/MrGaoGang/lucky_docs/)
+此文源码案例:[欢迎 Star](https://github.com/MrGaoGang/lucky_docs/)
 
 **目录**
+
 - [一、Render 函数参数详解](#一render-函数参数详解)
 - [二、样例：如何给表格组件添加表头筛选](#二样例如何给表格组件添加表头筛选)
-
 
 Vue 组件的开发有几种方式：单文件组件，使用 render 函数渲染，使用 template。
 
@@ -58,10 +58,16 @@ createElement(
 
 1.  第一个参数为渲染成哪个节点，接受 String,Object,Function 三种类型；
     - 如果是 String,比如是 div，那么表示此标签将会渲染成 div 标签；**String 渲染成普通的 html 标签**
-    - **如果是 Object，比如是一个 Vue 的组件:TableFilter，那么表示此标签将会渲染一个组件**。通常我们在单文件组件中使用的时候是 import {Table} from "iview";然后在 template 中引用此标签<Table>；而使用 render 则需要使用 createElement 方式创建一个。
-    - 如果是 Function，则可以根据自己的业务逻辑动态觉得是渲染成普通的 html 标签还是 Vue 组件。
+    - **如果是 Object，比如是一个 Vue 的组件:TableFilter，那么表示此标签将会渲染一个组件**。通常我们在单文件组件中使用的时候是
 
-2) 第二个参数接受 **一个对象{}类型的数据。其主要作用类似于组件中对某一个节点设置各种 bind 属性：设置样式 style，设置事件 on，设置类 class，设置自定义的命令，设置普通的 html 属性，设置传递参数 props 等等**。
+```js
+import { Table } from "iview";
+```
+
+然后在 template 中引用此标签`<Table>`；而使用 render 则需要使用 createElement 方式创建一个。 
+  - 如果是 Function，则可以根据自己的业务逻辑动态觉得是渲染成普通的 html 标签还是 Vue 组件。
+
+2. 第二个参数接受 **一个对象{}类型的数据。其主要作用类似于组件中对某一个节点设置各种 bind 属性：设置样式 style，设置事件 on，设置类 class，设置自定义的命令，设置普通的 html 属性，设置传递参数 props 等等**。
 
 > 有一点要注意：正如在模板语法中，v-bind:class 和 v-bind:style，会被特别对待一样，在 VNode 数据对象中，下列属性名是级别最高的字段。该对象也允许你绑定普通的 HTML 特性，就像 DOM 属性一样，比如 innerHTML (这会取代 v-html 指令)。
 
@@ -159,7 +165,7 @@ render(createElement=>
     return createElement(
     'div',
     {
-    
+
     },
     // {String | Array}
     // 子虚拟节点 (VNodes)，由 `createElement()` 构建而成，
@@ -176,6 +182,7 @@ render(createElement=>
     ))
 
 ```
+
 注意：子组件中的每一项（VNodes）都必须是唯一的;意味着，下面的 render function 是无效的：
 
 ```js
@@ -188,16 +195,15 @@ render: function (createElement) {
 }
 ```
 
-
 ## 二、样例：如何给表格组件添加表头筛选
 
 效果图:
 
 <img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=600 height=300 />
 
-iview的默认table组件不支持 表头输入框筛选，[官方地址](https://www.iviewui.com/components/table#ZDYLMB)
-此处默认您有了一定的vue开发基础。
-套用iview官方的例子：
+iview 的默认 table 组件不支持 表头输入框筛选，[官方地址](https://www.iviewui.com/components/table#ZDYLMB)
+此处默认您有了一定的 vue 开发基础。
+套用 iview 官方的例子：
 
 ```js
 //显示表格的例子
@@ -205,7 +211,7 @@ iview的默认table组件不支持 表头输入框筛选，[官方地址](https:
   <Table border :columns="columns7" :data="data6" ></Table>
 </template>
 <script>
-import { Table ,Button,Icon,Modal} from "iview";
+import { Table ,Button,Icon,Modal} from 'iview';
 import Vue from "vue";
 export default {
   components: {
@@ -322,19 +328,18 @@ export default {
       //modal注入
       Vue.prototype.$Modal=Modal;
   }
-  
+
 };
 </script>
 
 ```
 
-
-由于table组件表头筛选不支持输入框筛选，那么我们就必须的自己绘制。
+由于 table 组件表头筛选不支持输入框筛选，那么我们就必须的自己绘制。
 思路如下：
 
 - 找到表头所在的节点
-- 在表头节点后添加一个自定义筛选的div节点；
-- 使用render函数渲染一个下拉输入的单文件组件
+- 在表头节点后添加一个自定义筛选的 div 节点；
+- 使用 render 函数渲染一个下拉输入的单文件组件
 
 ```js
  mounted(){
@@ -372,5 +377,4 @@ console.log(allHeader);
 <img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/table-filter.png?raw=true" width=600 height=300 />
 <img src="https://github.com/MrGaoGang/lucky_docs/blob/master/images/render.png?raw=true" width=600 height=300 />
 
-
-此文源码案例:[欢迎Star](https://github.com/MrGaoGang/lucky_docs/)
+此文源码案例:[欢迎 Star](https://github.com/MrGaoGang/lucky_docs/)
