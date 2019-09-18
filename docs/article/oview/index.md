@@ -56,11 +56,26 @@ npm install oview --save
 
 </div>
 
+## [通用图表配置]
+[点击这里](./Chart.md)
 
-## [饼状图](./chart/pie.md)
-## [柱状图](./chart/histo.md)
-## [折线图](./chart/line.md)
-## [雷达图](./chart/radar.md)
-## [散点图和气泡图](./chart/point.md)
-## [面积图](./chart/area.md)
-## [图片平移缩放](./chart/intercation.md)
+## [饼状图]
+[点击这里]((./chart/pie.md))
+
+## [柱状图]
+[点击这里](./chart/histo.md)
+
+## [折线图]
+[点击这里](./chart/line.md)
+
+## [雷达图]
+[点击这里](./chart/radar.md)
+
+## [散点图和气泡图]
+[点击这里](./chart/point.md)
+
+## [面积图]
+[点击这里](./chart/area.md)
+
+## [图片平移缩放]
+[点击这里](./chart/intercation.md)
