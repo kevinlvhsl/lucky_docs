@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"npx vuepress dev docs",
-    "build":"npx vuepress build docs"
+    "dev": "npx vuepress dev docs",
+    "build": "npx vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,10 @@
   "homepage": "https://github.com/MrGaoGang/lucky_docs#readme",
   "devDependencies": {
     "vuepress": "^1.0.4"
+  },
+  "dependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
+    "@vuepress/plugin-medium-zoom": "^1.0.0-rc.1",
+    "@vuepress/plugin-nprogress": "^1.0.0-rc.1"
   }
 }
