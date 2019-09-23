@@ -17,9 +17,49 @@
 - [2. 记录面试中一些回答不够好的题](https://juejin.im/post/5a9b8417518825558251ce15)
 - [3. 滴滴 webapp 5.0 Vue 2.0 重构经验分享 ](https://github.com/DDFE/DDFE-blog/issues/13)
 
-## 四、工作中使用的开源项目
+## 四、单元测试
 
-1. [vue-grid-layout](https://github.com/jbaysolutions/vue-grid-layout)
+- [1. Jest测试结果分析.md](./test/Jest测试结果分析.md)
+
+
+## 五、自动化测试工具
+
+### 1. [vue-styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) (推荐)
+
+- [vue-styleguidist](packages/vue-styleguidist) 使用 [vue-docgen-api](packages/vue-docgen-api) 并创建一个网站站点来展示和开发组件
+
+- [vue-docgen-api](packages/vue-docgen-api) 解析 Vue 组件，生成组件说明文档 api.
+
+- [vue-inbrowser-compiler](packages/vue-inbrowser-compiler) 接受用 es6 编写的 vue 组件代码，并使用 buble 使其与所有浏览器兼容。
+
+- [vue-cli-plugin-styleguidist](packages/vue-cli-plugin-styleguidist) 在[vue-cli 3](https://cli.vuejs.org/guide/)中使用 styleguidist.
+
+### 2. [vue-test-utils](https://github.com/vuejs/vue-test-utils) (推荐)
+
+**Vue Test Utils 是 Vue.js 官方的单元测试实用工具库。**
+
+### 3. [@vue/cli-plugin-unit-jest](https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-plugin-unit-jest/README.md)（推荐）
+
+**Vue Cli 的 jest 单元测试插件。默认是包含了以下几个库**
+
+- [vue-test-utils](https://github.com/vuejs/vue-test-utils)
+- [jest](https://jestjs.io/docs/en/getting-started)
+
+### 4. [majestic](https://github.com/Raathigesh/majestic) (推荐)
+
+**浏览器中显示单元测试结果和代码覆盖率**
+
+![](/images/vue/majestic.png)
+
+### 5. [jest-html-reporter](https://github.com/Hargne/jest-html-reporter)
+
+**Jest 单元测试结果分析**
+![](/images/vue/report.png)
+
+
+## 六、工作中使用的开源项目
+
+### 1. [vue-grid-layout](https://github.com/jbaysolutions/vue-grid-layout)
 
 vue-grid-layout 是一个类似于[Gridster](http://dsmorse.github.io/gridster.js/)的栅格布局系统, 适用于 Vue.js。 **灵感源自于 [React-Grid-Layout](https://github.com/STRML/react-grid-layout)**
 
@@ -32,7 +72,7 @@ vue-grid-layout 是一个类似于[Gridster](http://dsmorse.github.io/gridster.j
 - 自动化 RTL 支持
 - 响应式
 
-2. [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
+### 2. [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
 
    **列表拖动最佳选择**
 
@@ -41,7 +81,7 @@ vue-grid-layout 是一个类似于[Gridster](http://dsmorse.github.io/gridster.j
 - 动画切换
 - 表格列/行拖动
 
-3. [interact.js](https://github.com/taye/interact.js)
+### 3. [interact.js](https://github.com/taye/interact.js)
 
 **任意元素拖动，最佳选择**
 
@@ -54,14 +94,14 @@ vue-grid-layout 是一个类似于[Gridster](http://dsmorse.github.io/gridster.j
 - 是独立的，可定制
 - 不修改 DOM 除了更改光标（但你可以禁用它）
 
-4. [element-resize-detector](https://github.com/wnr/element-resize-detector)
+### 4. [element-resize-detector](https://github.com/wnr/element-resize-detector)
 
 **优化的浏览器调整元素大小的侦听器**
 
-5. [monaco-editor](https://github.com/microsoft/monaco-editor)
+### 5. [monaco-editor](https://github.com/microsoft/monaco-editor)
 
 **微软在线代码编辑器，最佳选择**
 
-6. [set-webpack-public-path plugin for webpack](https://github.com/microsoft/web-build-tools/tree/master/webpack/set-webpack-public-path-plugin)
+### 6. [set-webpack-public-path plugin for webpack](https://github.com/microsoft/web-build-tools/tree/master/webpack/set-webpack-public-path-plugin)
 
 **解决 webpack 打包 js/image/css，设置不同 publicPath，导致相对路径问题**

@@ -19,19 +19,8 @@ module.exports = {
         nav: nav,
         sidebar: 'auto',
         sidebarDepth: 2,
-        "/oview/index": {
-            sidebar: [{
-                    title: 'Group 1',
-                    collapsable: false,
-                    children: [
-                        '/'
-                    ]
-                },
-                {
-                    title: 'Group 2',
-                    children: [ /* ... */ ]
-                }
-            ]
+        serviceWorker:{
+            updatePopup:true
         }
     },
     plugins: ['@vuepress/back-to-top', '@vuepress/medium-zoom','@vuepress/nprogress']
