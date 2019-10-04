@@ -105,3 +105,11 @@ vue-grid-layout 是一个类似于[Gridster](http://dsmorse.github.io/gridster.j
 ### 6. [set-webpack-public-path plugin for webpack](https://github.com/microsoft/web-build-tools/tree/master/webpack/set-webpack-public-path-plugin)
 
 **解决 webpack 打包 js/image/css，设置不同 publicPath，导致相对路径问题**
+
+### 7. [vue-form-making](https://github.com/GavinZhuLei/vue-form-making)
+
+**在线拖拽，基于Vue的表单设计器，让表单开发简单而高效**
+
+### 8. [vue-cli-plugin-electron-builder](https://github.com/nklayman/vue-cli-plugin-electron-builder)(重要)
+
+**使用Vue开发Mac,Windows应用程序**
