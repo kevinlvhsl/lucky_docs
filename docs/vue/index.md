@@ -11,18 +11,22 @@
 
 - [1. Vue 响应式原理解析](./deep/Vue响应式原理解析.md)
 
-## 三、推荐文章系列
+## 三、实现方案
+
+- [1. 如何全局显示工具栏](./program/如何全局显示工具栏.md)
+
+## 四、推荐文章系列
 
 - [1. 30 道 Vue 面试题，内含详细讲解](https://juejin.im/post/5d59f2a451882549be53b170#heading-1)
 - [2. 记录面试中一些回答不够好的题](https://juejin.im/post/5a9b8417518825558251ce15)
 - [3. 滴滴 webapp 5.0 Vue 2.0 重构经验分享 ](https://github.com/DDFE/DDFE-blog/issues/13)
 
-## 四、单元测试
+## 五、单元测试
 
 - [1. Jest测试结果分析.md](./test/Jest测试结果分析.md)
 
 
-## 五、自动化测试工具
+## 刘、自动化测试工具
 
 ### 1. [vue-styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) (推荐)
 
@@ -57,7 +61,7 @@
 ![](/images/vue/report.png)
 
 
-## 六、工作中使用的开源项目
+## 七、工作中使用的开源项目
 
 ### 1. [vue-grid-layout](https://github.com/jbaysolutions/vue-grid-layout)
 
