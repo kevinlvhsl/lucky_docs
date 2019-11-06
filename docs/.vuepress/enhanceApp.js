@@ -7,12 +7,10 @@ function integrateGitment(router) {
     scriptGitment.src = 'https://imsun.github.io/gitment/dist/gitment.browser.js'
     document.body.appendChild(scriptGitment)
   
-    router.afterEach((to,from) => {
-      // 页面滚动，hash值变化，也会触发afterEach钩子，避免重新渲染
-      if (to.path === from.path) return
+    router.afterEach((to) => {
       // 已被初始化则根据页面重新渲染 评论区
       if (scriptGitment.onload) {
-        renderGitment()
+        renderGitment(to.fullPath)
       } else {
         scriptGitment.onload = () => {
           const commentsContainer = document.createElement('div')
@@ -21,28 +19,27 @@ function integrateGitment(router) {
           const $page = document.querySelector('.page')
           if ($page) {
             $page.appendChild(commentsContainer)
-            renderGitment()
+            renderGitment(to.fullPath)
           }
         }
       }
     })
   
-    function renderGitment() {
+    function renderGitment(fullPath) {
       const gitment = new Gitment({
-        // ！！！ID最好不要使用默认值（location.href），因为href会携带hash，可能导致一个页面对应像个评论issue！！！
-        // https://github.com/imsun/gitment/issues/55
-        id: location.pathname,
-        owner: 'mrgaogang', // 必须是你自己的github账号
-        repo: 'https://github.com/MrGaoGang/lucky_docs', // 上一个准备的github仓库
-        link: location.origin + location.pathname,
+        id: fullPath,
+        owner: 'gaogangwork@qq.com', // 必须是你自己的github账号
+        repo: 'lucky_docs', // 上一个准备的github仓库，作为评论，非全称（仓库名）
         oauth: {
-          client_id: '5dac32c1f40a1a16d249', // 第一步注册 OAuth application 后获取到的 Client ID
-          client_secret: '2094e99d4eff7fee2c1e07e98b8eea32b397970a', // 第一步注册 OAuth application 后获取到的 Clien Secret
+          // 关于OAuth只需在github中的setting/Developer application新建获取
+          client_id: '', // 第一步注册 OAuth application 后获取到的 Client ID
+          client_secret: '', // 第一步注册 OAuth application 后获取到的 Clien Secret
         },
       })
       gitment.render('comments-container')
     }
   }
+  
   
   export default ({
     Vue, // VuePress 正在使用的 Vue 构造函数
