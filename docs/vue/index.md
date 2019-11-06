@@ -6,10 +6,12 @@
 - [2. Vue 使用 render 函数渲染组件](./Vue使用render函数渲染组件.md)
 - [3. Vue 中插件开发的四种方式](./Vue中插件开发的四种方式.md)
 - [4. Vue 路由变化页面没有刷新](./Vue路由变化页面没有刷新解决办法.md)
+- [5. Vuex 中 Getter,Action,Mutation 函数参数说明](./Vuex中Getter,Action,Mutation函数参数说明.md)
 
 ## 二、深入系列
 
 - [1. Vue 响应式原理解析](./deep/Vue响应式原理解析.md)
+- [2. Vue CLI 插件开发](./Vue-cli插件开发.md)
 
 ## 三、实现方案
 
@@ -20,10 +22,11 @@
 - [1. 30 道 Vue 面试题，内含详细讲解](https://juejin.im/post/5d59f2a451882549be53b170#heading-1)
 - [2. 记录面试中一些回答不够好的题](https://juejin.im/post/5a9b8417518825558251ce15)
 - [3. 滴滴 webapp 5.0 Vue 2.0 重构经验分享 ](https://github.com/DDFE/DDFE-blog/issues/13)
+- [4. 现代浏览器观察者 Observer API 指南](https://juejin.im/post/5db10695e51d452a091fde90)
 
 ## 五、单元测试
 
-- [1. Vue使用jest单元测试详解](./test/Vue使用jest单元测试详解.md)
+- [1. Vue 使用 jest 单元测试详解](./test/Vue使用jest单元测试详解.md)
 
 ## 刘、自动化测试工具
 
@@ -59,7 +62,6 @@
 **Jest 单元测试结果分析**
 ![](/images/vue/report.png)
 
-
 ## 七、工作中使用的开源项目
 
 ### 1. [vue-grid-layout](https://github.com/jbaysolutions/vue-grid-layout)
@@ -77,7 +79,7 @@ vue-grid-layout 是一个类似于[Gridster](http://dsmorse.github.io/gridster.j
 
 ### 2. [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
 
-   **列表拖动最佳选择**
+**列表拖动最佳选择**
 
 - 支持列表元素拖动，滚动
 - 多列表拖动
@@ -111,8 +113,8 @@ vue-grid-layout 是一个类似于[Gridster](http://dsmorse.github.io/gridster.j
 
 ### 7. [vue-form-making](https://github.com/GavinZhuLei/vue-form-making)
 
-**在线拖拽，基于Vue的表单设计器，让表单开发简单而高效**
+**在线拖拽，基于 Vue 的表单设计器，让表单开发简单而高效**
 
 ### 8. [vue-cli-plugin-electron-builder](https://github.com/nklayman/vue-cli-plugin-electron-builder)(重要)
 
-**使用Vue开发Mac,Windows应用程序**
+**使用 Vue 开发 Mac,Windows 应用程序**

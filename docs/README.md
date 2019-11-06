@@ -3,7 +3,7 @@ home: true
 title: ""
 heroImage: /header.png
 actionText: 看一看 →
-actionLink: /javascript/index/
+actionLink: /vue/index/
 features:
 - title: 前端学习
   details: 分享自己的工作心得，以及对技术的了解。
