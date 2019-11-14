@@ -27,7 +27,8 @@
 
 * [1. JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
 
-## 三、Webpack打包
+## 三、前端打包及项目管理
+* [1. lerna项目管理](./lerna.md)
 
 
 ## 四、前端性能优化
