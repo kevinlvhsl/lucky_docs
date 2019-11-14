@@ -24,6 +24,8 @@
 - [2. 记录面试中一些回答不够好的题](https://juejin.im/post/5a9b8417518825558251ce15)
 - [3. 滴滴 webapp 5.0 Vue 2.0 重构经验分享 ](https://github.com/DDFE/DDFE-blog/issues/13)
 - [4. 现代浏览器观察者 Observer API 指南](https://juejin.im/post/5db10695e51d452a091fde90)
+- [5. Vue-Router面试题汇总](https://juejin.im/post/5d9c43b751882507b40d3376)
+- [6. Vuex面试题汇总](https://juejin.im/post/5dba91e4518825647e4ef18b)
 
 ## 五、单元测试
 
