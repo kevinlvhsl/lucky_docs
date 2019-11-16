@@ -26,6 +26,8 @@
 ## 二、JavaScript 进阶
 
 * [1. JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
+* [2. Immutable.js了解一下](https://juejin.im/post/5ac437436fb9a028c97a437c)
+
 
 ## 三、前端打包及项目管理
 * [1. lerna项目管理](./lerna.md)
