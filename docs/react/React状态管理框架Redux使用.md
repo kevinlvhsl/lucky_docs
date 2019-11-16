@@ -8,7 +8,7 @@
 
 
 图片参考于这里
-![](https://upload-images.jianshu.io/upload_images/5004111-88b1247ff5fa6c30.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
+![](/images/react/react-redux.png)
 
 ## Action的理解
 

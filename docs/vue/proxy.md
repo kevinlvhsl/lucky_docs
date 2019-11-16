@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 开发vue项目，大多数我们都是使用的`vue-cli`，众所周知，我们在本地联调服务API时，会存在跨域问题。那么我们如何利用`cli`解决跨域问题呢？
 其实`webpack`官网已有介绍[dev-server#proxy](https://webpack.docschina.org/configuration/dev-server/#devserver-proxy)。
 
