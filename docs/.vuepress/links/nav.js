@@ -1,6 +1,6 @@
 module.exports = [{
-        text: '简介',
-        link: '/introduce'
+        text: 'UI设计器',
+        link: 'http://gaogangsever.cn/'
     },
     {
         text: '前端',
