@@ -18,6 +18,8 @@
 
 - [1. 如何全局显示工具栏](./program/如何全局显示工具栏.md)
 - [2. Vue-CLI解决跨域问题](./proxy.md)
+- [3. 实现双向绑定Proxy比defineproperty优劣如何?](https://juejin.im/post/5acd0c8a6fb9a028da7cdfaf#heading-9)
+- [4. 一张图理清 Vue 3.0 的响应式系统](https://juejin.im/post/5d9da45af265da5b8072de5d)
 
 ## 四、推荐文章系列
 
