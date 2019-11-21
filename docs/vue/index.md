@@ -30,6 +30,7 @@
 - [5. Vue-Router面试题汇总](https://juejin.im/post/5d9c43b751882507b40d3376)
 - [6. Vuex面试题汇总](https://juejin.im/post/5dba91e4518825647e4ef18b)
 - [7. Vue 开发必须知道的 36 个技巧【近1W字】](https://juejin.im/post/5d9d386fe51d45784d3f8637#heading-21)
+- [8. [译] 精通 Intersection Observer API](https://juejin.im/post/5dd60de9e51d4536792e4298?utm_source=gold_browser_extension)
 ## 五、单元测试
 
 - [1. Vue 使用 jest 单元测试详解](./test/Vue使用jest单元测试详解.md)
