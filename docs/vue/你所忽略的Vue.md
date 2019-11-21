@@ -233,4 +233,43 @@ store.registerModule(['nested', 'myModule'], {
 
 之后就可以通过`store.state.myModule` 和 `store.state.nested.myModule` 访问模块的状态
 
+## 九、 Vue.compile
+在 render 函数中编译模板字符串。只在独立构建时有效。
 
+```js
+var res = Vue.compile('<div><span>{{ msg }}</span></div>')
+
+new Vue({
+  data: {
+    msg: 'hello'
+  },
+  render: res.render,
+  staticRenderFns: res.staticRenderFns
+})
+
+```
+
+## 十、 Vue.config.performance
+通常用来监听性能。**只适用于开发模式和支持 performance.mark API 的浏览器上**
+```js
+Vue.config.performance = true
+```
+
+## 十一、 在v-model上怎么用Vuex中state的值？
+需要通过computed计算属性来转换。
+
+```js
+<input v-model="message">
+// ...
+computed: {
+    message: {
+        get () {
+            return this.$store.state.message
+        },
+        set (value) {
+            this.$store.commit('updateMessage', value)
+        }
+    }
+}
+
+```
