@@ -18,8 +18,7 @@
 
 - [1. 如何全局显示工具栏](./program/如何全局显示工具栏.md)
 - [2. Vue-CLI解决跨域问题](./proxy.md)
-- [3. 实现双向绑定Proxy比defineproperty优劣如何?](https://juejin.im/post/5acd0c8a6fb9a028da7cdfaf#heading-9)
-- [4. 一张图理清 Vue 3.0 的响应式系统](https://juejin.im/post/5d9da45af265da5b8072de5d)
+
 
 ## 四、推荐文章系列
 
@@ -30,7 +29,9 @@
 - [5. Vue-Router面试题汇总](https://juejin.im/post/5d9c43b751882507b40d3376)
 - [6. Vuex面试题汇总](https://juejin.im/post/5dba91e4518825647e4ef18b)
 - [7. Vue 开发必须知道的 36 个技巧【近1W字】](https://juejin.im/post/5d9d386fe51d45784d3f8637#heading-21)
-- [8. [译] 精通 Intersection Observer API](https://juejin.im/post/5dd60de9e51d4536792e4298?utm_source=gold_browser_extension)
+- [8. 精通 Intersection Observer API](https://juejin.im/post/5dd60de9e51d4536792e4298?utm_source=gold_browser_extension)
+- [9. 实现双向绑定Proxy比defineproperty优劣如何?](https://juejin.im/post/5acd0c8a6fb9a028da7cdfaf#heading-9)
+- [10. 一张图理清 Vue 3.0 的响应式系统](https://juejin.im/post/5d9da45af265da5b8072de5d)
 ## 五、单元测试
 
 - [1. Vue 使用 jest 单元测试详解](./test/Vue使用jest单元测试详解.md)
