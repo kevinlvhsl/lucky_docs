@@ -1,5 +1,5 @@
 module.exports = [{
-        text: 'UI设计器',
+        text: '页面构建器',
         link: 'http://gaogangsever.cn/'
     },
     {
