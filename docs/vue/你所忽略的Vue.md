@@ -161,7 +161,76 @@ Vue 的父组件和子组件生命周期钩子函数执行顺序可以归类为�
 - **销毁过程**
 父 beforeDestroy -> 子 beforeDestroy -> 子 destroyed -> 父 destroyed
 
+## 七、 使用Vuex的createNamespacedHelpers
+通常我们使用带命名空间的方式可能比较繁琐，比如：
 
+```js
+computed: {
+  ...mapState({
+    a: state => state.some.nested.module.a,
+    b: state => state.some.nested.module.b
+  })
+},
+methods: {
+  ...mapActions([
+    'some/nested/module/foo', // -> this['some/nested/module/foo']()
+    'some/nested/module/bar' // -> this['some/nested/module/bar']()
+  ])
+}
+//或者使用
 
+computed: {
+  ...mapState('some/nested/module', {
+    a: state => state.a,
+    b: state => state.b
+  })
+},
+methods: {
+  ...mapActions('some/nested/module', [
+    'foo', // -> this.foo()
+    'bar' // -> this.bar()
+  ])
+}
+```
+
+如果使用`createNamespacedHelpers`是不是简化了很多
+
+```js
+import { createNamespacedHelpers } from 'vuex'
+const { mapState, mapActions } = createNamespacedHelpers('some/nested/module')
+export default {
+  computed: {
+    // 在 `some/nested/module` 中查找
+    ...mapState({
+      a: state => state.a,
+      b: state => state.b
+    })
+  },
+  methods: {
+    // 在 `some/nested/module` 中查找
+    ...mapActions([
+      'foo',
+      'bar'
+    ])
+  }
+}
+
+```
+
+## 八、 Vuex模块动态注册
+在 store 创建之后，你可以使用 `store.registerModule` 方法注册模块：
+
+```js
+// 注册模块 `myModule`
+store.registerModule('myModule', {
+  // ...
+})
+// 注册嵌套模块 `nested/myModule`
+store.registerModule(['nested', 'myModule'], {
+  // ...
+})
+```
+
+之后就可以通过`store.state.myModule` 和 `store.state.nested.myModule` 访问模块的状态
 
 
