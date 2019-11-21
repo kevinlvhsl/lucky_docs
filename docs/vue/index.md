@@ -7,7 +7,7 @@
 - [3. Vue 中插件开发的四种方式](./Vue中插件开发的四种方式.md)
 - [4. Vue 路由变化页面没有刷新](./Vue路由变化页面没有刷新解决办法.md)
 - [5. Vuex 中 Getter,Action,Mutation 函数参数说明](./Vuex中Getter,Action,Mutation函数参数说明.md)
-
+- [6. 你所忽略的Vue](./你所忽略的Vue.md)
 ## 二、深入系列
 
 - [1. Vue 响应式原理解析](./deep/Vue响应式原理解析.md)
