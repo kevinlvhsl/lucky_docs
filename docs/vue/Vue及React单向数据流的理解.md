@@ -1,5 +1,6 @@
 其实Vue和React都是`单向数据流`，只是Vue提供了类似于`v-model`的方式做`双向绑定`。那么什么是单向数据流？个人理解如下：
 
+![](/images/vue/data-flow.png)
 
 
 ## 理解React单选数据流
