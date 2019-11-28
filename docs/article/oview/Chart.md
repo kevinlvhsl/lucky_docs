@@ -262,9 +262,10 @@ titleStyle: {
 
 ### width/height
 - 是否必须:False
-- 参数类型:Integer
+- 参数类型:Number/String：百分比和像素两种类型
 - 描述:图表的宽度和高度
-- 默认：图表宽度，默认为:屏幕宽度；图表高度，默认为:300 
+- 默认：图表宽度，默认为:100%；图表高度，默认为:300 
+- 你可以填：width="100%"/width="100"/ width="100px"，如果为width="100"即数字类型，将会转换成100px，默认是整个parent容器的宽度:100%
 
 ### backgroundColor
 - 是否必须:False
