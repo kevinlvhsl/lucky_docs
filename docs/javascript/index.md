@@ -32,7 +32,8 @@
 ## 三、Webpack及项目管理
 * [1. lerna项目管理](./lerna.md)
 * [2. 一步一步的了解webpack4的splitChunk插件](https://juejin.im/post/5af1677c6fb9a07ab508dabb)
-
+* [3. chunk-hash,hash和content-hash的区别](./webpack/chunk-hash,hash和content-hash的区别.md)
+* [4. webpack-chain常用配置](./webpack/webpack-chain常用配置)
 
 ## 四、前端性能优化
 
