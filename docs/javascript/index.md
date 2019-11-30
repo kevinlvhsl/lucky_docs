@@ -29,8 +29,9 @@
 * [2. Immutable.js了解一下](https://juejin.im/post/5ac437436fb9a028c97a437c)
 * [3. WebSocket：5分钟从入门到精通](https://juejin.im/post/5a4e6a43f265da3e303c4787#heading-19)
 
-## 三、前端打包及项目管理
+## 三、Webpack及项目管理
 * [1. lerna项目管理](./lerna.md)
+* [2. 一步一步的了解webpack4的splitChunk插件](https://juejin.im/post/5af1677c6fb9a07ab508dabb)
 
 
 ## 四、前端性能优化
