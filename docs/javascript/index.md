@@ -15,12 +15,13 @@
 * [8. Object.create()和New的区别](./base/Object.create和New的区别.md)
 * [9. Javascript柯里化和偏函数实现](./base/Javascript柯里化和偏函数实现.md)
 * [10. Javascript中this绑定详解](./base/Javascript中this绑定详解.md)
-* [11. JavaScript中改变this指向有几种方式](./base/JavaScript中改变this指向有几种方式.md)
+* [11. Javascript中改变this指向有几种方式](./base/JavaScript中改变this指向有几种方式.md)
 * [12. Javascript的call和apply和bind方法](./base/Javascript的call和apply和bind方法.md)
 * [13. Javascript的bind的polyfill的理解](./base/Javascript的bind的polyfill的理解.md)
 * [14. Javascript模块化发展AMD,CMD,CommonJS,UMD,ES6](./base/Javascript模块化发展AMD,CMD,CommonJS,UMD,ES6.md)
 * [15. Javascript寄生式组合继承详解](./base/Javascript寄生式组合继承详解.md)
-* [16. JavaScript常见ployfill](./base/JavaScript常见ployfill.md)
+* [16. Javascript常见ployfill](./base/JavaScript常见ployfill.md)
+* [17. Javascript实现继承的几种方式](http://ghmagical.com/article/page/id/omIoPb1AIBPu)
 
 
 ## 二、JavaScript 进阶
