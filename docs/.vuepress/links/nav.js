@@ -26,10 +26,11 @@ module.exports = [{
                 link: "/mendix/study"
             },
         ]
-    }, {
-        text: 'Android',
-        link: '/android'
     },
+    //  {
+    //     text: '移动',
+    //     link: '/mobile/index'
+    // },
     {
         text: "开源",
         items: [{
@@ -44,6 +45,15 @@ module.exports = [{
         }, {
             text: "Vue开发Mendix组件脚手架",
             link: "https://github.com/MrGaoGang/lucky_tools/blob/master/packages/mendix-cli/README.md"
+        },{
+            text: 'cocos web端开发',
+            link: 'https://github.com/MrGaoGang/cocos-webpack-web'
+        },{
+            text: 'cocos web端开发',
+            link: 'https://github.com/MrGaoGang/cocos-webpack-web'
+        },{
+            text: 'kotlin App',
+            link: 'https://github.com/MrGaoGang/KotlinGank'
         }]
     },
     {
