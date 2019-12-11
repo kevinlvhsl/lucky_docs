@@ -107,9 +107,9 @@ ps: 当我们不设置cache-control，只设置协商缓存，在不同浏览器
 - 3XX 重定向
 
     - 301 moved permanently，永久性重定向，表示资源已被分配了新的 URL
-    - 302 found，临时性重定向，表示资源临时被分配了新的 URL ✨
+    - 302 found，临时性重定向，表示资源临时被分配了新的 URL ✨（通常解析到CDN）
     - 303 see other，表示资源存在着另一个 URL，应使用 GET 方法获取资源
-    - **304 not modified**，如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码 ✨
+    - **304 not modified（缓存）**，如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码 ✨
     - 307 temporary redirect，临时重定向，和302含义相同
 
 - 4XX 客户端错误
@@ -128,6 +128,16 @@ ps: 当我们不设置cache-control，只设置协商缓存，在不同浏览器
     - 503 service unavailable，表明服务器暂时处于超负载或正在停机维护，无法处理请求
     - 505 http version not supported 服务器不支持，或者拒绝支持在请求中使用的 HTTP 版本
 
+
+### HTTP 头部
+
+HTTP头可以看做是一个键值对，在HTTP标准中，Request Header如下图：
+
+![](https://user-gold-cdn.xitu.io/2019/2/20/1690aee1a27d4803?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+Response Header如下图：
+
+![](https://user-gold-cdn.xitu.io/2019/2/20/1690aee1a29607f3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 ### TCP的三次握手和四次挥手
 

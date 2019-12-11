@@ -2,7 +2,7 @@
 
 在讲解之前，先让我们搭建一个简单的`webpack`工程。
 
-# 一、工程搭建
+## 一、工程搭建
 
 ```json
 // package.json文件
@@ -85,7 +85,7 @@ body {
 }
 ```
 
-# 二、原理解析
+## 二、原理解析
 
 在讲解之前让我们允许一下，`yarn dev`，对没错，这时您可以在`dist`目录下查看到生成了 3 个文件。
 其中`0.bundle.js`和`1.bundle.js`分别对应`index.css和index2.css`。异步加载的模块会产生一个单独的模块。
@@ -111,7 +111,7 @@ dist
 ]);
 ```
 
-## （一） chunk.bundle.js 初识
+### （一） chunk.bundle.js 初识
 
 异步加载的 js，打包时会额外的打包成一个 js 文件，比如`0.bundle.js`
 
@@ -143,12 +143,12 @@ dist
   - 异步加载的文件中存放的需要安装的模块列表
 - 在`满足某种情况`下，会执行具体模块中的代码，那么在什么时候执行，请查看下面的分析
 
-## （二）初识 bundle.js
+### （二）初识 bundle.js
 
 - `bundle` 是一个立即执行函数，是入口文件。
 - webpack 将所有模块打包成了 bundle 的依赖，通过一个对象注入
 
-### jsonpScriptSrc
+#### jsonpScriptSrc
 
 `jsonpScriptSrc`的主要作用是通过`publicPath`+`chunkId`的方式获取到异步加载模块的`url`地址。
 
@@ -158,7 +158,7 @@ function jsonpScriptSrc(chunkId) {
 }
 ```
 
-### __webpack_require__
+#### __webpack_require__
 
 `__webpack_require__`是`webpack`的核心,`webpack`通过`__webpack_require__`引入模块。
 `__webpack_require__`对`require`包裹了一层,主要功能是加载 js 文件。
@@ -193,7 +193,7 @@ function __webpack_require__(moduleId) {
 }
 ```
 
-### __webpack_require__.e 异步加载核心
+#### __webpack_require__.e 异步加载核心
 
 异步加载的核心其实是使用`类jsonp`的方式，通过动态创建`script`的方式实现异步加载。
 
@@ -271,7 +271,7 @@ __webpack_require__.e = function requireEnsure(chunkId) {
 };
 ```
 
-### webpackJsonpCallback
+#### webpackJsonpCallback
 
 `webpackJsonpCallback`的主要作用是**每个异步模块加载并安装**。
 webpack 会安装对应的 webpackJsonp 文件。
@@ -358,3 +358,5 @@ while (resolves.length) {
 }
 ```
 5. 完成各个模块的加载
+
+![](/images/js/webpack_code_split.png)
