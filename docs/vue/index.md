@@ -15,6 +15,7 @@
 - [1. Vue 响应式原理解析](./deep/Vue响应式原理解析.md)
 - [2. Vue CLI 插件开发](./Vue-cli插件开发.md)
 - [3. 性能优化实践详解](../javascript/performance/性能优化实践.md)
+- [4. 前端工程能力思考](../javascript/前端工程能力思考.md)
 
 ## 三、实现方案
 

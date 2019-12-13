@@ -29,6 +29,7 @@
 * [1. JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
 * [2. Immutable.js了解一下](https://juejin.im/post/5ac437436fb9a028c97a437c)
 * [3. WebSocket：5分钟从入门到精通](https://juejin.im/post/5a4e6a43f265da3e303c4787#heading-19)
+* [4. 前端工程能力思考](./前端工程能力思考.md)
 
 ## 三、Webpack及项目管理
 * [1. lerna项目管理](./lerna.md)
