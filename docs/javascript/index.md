@@ -30,6 +30,9 @@
 * [2. Immutable.js了解一下](https://juejin.im/post/5ac437436fb9a028c97a437c)
 * [3. WebSocket：5分钟从入门到精通](https://juejin.im/post/5a4e6a43f265da3e303c4787#heading-19)
 * [4. 前端工程能力思考](./前端工程能力思考.md)
+* [5. 1px问题解决方案](./1px.md)
+* [6. 常用前端跨域方案](./proxy.md)
+* [7. Web 前端页面劫持和反劫持](https://juejin.im/post/593df628da2f60006728cff2#heading-2)
 
 ## 三、Webpack及项目管理
 * [1. lerna项目管理](./lerna.md)

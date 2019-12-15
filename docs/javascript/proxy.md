@@ -1,3 +1,5 @@
+# 常用前端跨域方案
+
 ## 一、使用 jsonp 方式跨域
 
 **亲测有效：只支持get请求**
@@ -81,7 +83,7 @@ proxy("http://www.domain2.com/b.html", function(data) {
 </script>
 ```
 
-### 三、postMessage 跨域
+## 三、postMessage 跨域
 
 **亲测有效**
 
