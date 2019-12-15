@@ -29,10 +29,9 @@
 * [1. JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
 * [2. Immutable.js了解一下](https://juejin.im/post/5ac437436fb9a028c97a437c)
 * [3. WebSocket：5分钟从入门到精通](https://juejin.im/post/5a4e6a43f265da3e303c4787#heading-19)
-* [4. 前端工程能力思考](./前端工程能力思考.md)
-* [5. 1px问题解决方案](./1px.md)
-* [6. 常用前端跨域方案](./proxy.md)
-* [7. Web 前端页面劫持和反劫持](https://juejin.im/post/593df628da2f60006728cff2#heading-2)
+* [4. 1px问题解决方案](./1px.md)
+* [5. 常用前端跨域方案](./proxy.md)
+* [6. Web 前端页面劫持和反劫持](./deep/前端页面劫持和反劫持.md)
 
 ## 三、Webpack及项目管理
 * [1. lerna项目管理](./lerna.md)
@@ -40,6 +39,7 @@
 * [3. chunk-hash,hash和content-hash的区别](./webpack/chunk-hash,hash和content-hash的区别.md)
 * [4. webpack-chain常用配置](./webpack/webpack-chain常用配置.md)
 * [5. webpack模块异步加载原理解析](./webpack/webpack模块异步加载原理解析.md)
+* [6. 前端工程能力思考](./前端工程能力思考.md)
 
 ## 四、前端性能优化
 
