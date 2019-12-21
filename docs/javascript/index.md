@@ -33,15 +33,21 @@
 * [5. 常用前端跨域方案](./proxy.md)
 * [6. Web 前端页面劫持和反劫持](./deep/前端页面劫持和反劫持.md)
 
-## 三、Webpack及项目管理
+## 三、前端深入系列
+
+* [1. 前端工程能力思考](../engine/前端工程能力思考.md)
+* [2. 企业级微服务方案](../engine/企业级微服务方案.md)
+* [3. 前端性能优化度量](../engine/前端性能优化度量.md)
+
+
+## 四、Webpack及项目管理
 * [1. lerna项目管理](./lerna.md)
 * [2. 一步一步的了解webpack4的splitChunk插件](https://juejin.im/post/5af1677c6fb9a07ab508dabb)
 * [3. chunk-hash,hash和content-hash的区别](./webpack/chunk-hash,hash和content-hash的区别.md)
 * [4. webpack-chain常用配置](./webpack/webpack-chain常用配置.md)
 * [5. webpack模块异步加载原理解析](./webpack/webpack模块异步加载原理解析.md)
-* [6. 前端工程能力思考](./前端工程能力思考.md)
 
-## 四、前端性能优化
+## 五、前端性能优化
 
 * [1. Vue代码层面性能优化](./performance/性能优化实践.md#一、代码层面性能优化)
 * [2. 前端性能优化清单](./performance/性能优化实践.md#二、前端性能清单)
@@ -49,6 +55,7 @@
 * [4. 优化输出质量-压缩文件体积](./performance/性能优化实践.md#四、优化输出质量-压缩文件体积)
 * [5. 优化输出质量-加速网络请求](./performance/性能优化实践.md#五、优化输出质量-加速网络请求)
 * [6. 优化结果分析](./performance/性能优化实践.md#六、优化结果分析)
+* [7. 前端性能优化度量](../engine/前端性能优化度量.md)
 
 
 
