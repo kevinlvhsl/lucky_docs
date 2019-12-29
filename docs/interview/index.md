@@ -21,6 +21,7 @@
 17. [面试官: 你对虚拟DOM原理的理解?](https://user-gold-cdn.xitu.io/2019/8/1/16c49afec13e0416)
 18. [性能优化实践](https://mrgaogang.github.io/javascript/performance/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E8%B7%B5.html#%E4%B8%80%E3%80%81%E4%BB%A3%E7%A0%81%E5%B1%82%E9%9D%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
 19. [Web 前端性能基础指标&计算方式](https://testerhome.com/topics/14305)
+20. [10种常用排序算法](https://www.runoob.com/w3cnote/insertion-sort.html)
 
 ## 笔试题
 

@@ -3,6 +3,9 @@
 
 ![](/images/js/vue_source.png)
 
+![](/images/vue/vue_2.0.jpeg)
+
+
 [以下文章转载自:这里](https://github.com/DDFE/DDFE-blog/issues/17)
 
 Vue 版本： 2.3.2
