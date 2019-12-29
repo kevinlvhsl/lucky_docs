@@ -162,13 +162,16 @@ Response Header如下图：
 
 ### HTTP和HTTPS的区别
 - [HTTP和HTTPS的区别](https://mp.weixin.qq.com/s/UE7Zw0aSbxLuFFSraSUIOQ)
-
+- [HTTP1.0 2.0的区别](https://mp.weixin.qq.com/s/GICbiyJpINrHZ41u_4zT-A?)
 
 ### 浏览器渲染过程和原理
 
 - [浏览器的渲染：过程与原理](https://zhuanlan.zhihu.com/p/29418126)
 
 
+### SSL中的对称加密和非对称加密
+
+- [理解SSL中的对称加密和非对称加密](https://www.cnblogs.com/hai-blog/p/8311671.html)
 
 
 
