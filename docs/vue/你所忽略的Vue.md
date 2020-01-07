@@ -273,3 +273,25 @@ computed: {
 }
 
 ```
+## 十二、 vue-cli打包引入umd.js
+
+当我们使用 vue-clic 的打包命令
+
+```bash
+vue-cli-service build  --target lib --name my-demo-lib --dest dist src/entry.js
+```
+
+运行上面的命令将会在`dist`目录下生成`my-demo-lib.common.js,my-demo-lib.umd.js和my-demo-lib.umd.min.js`
+
+如果想要本地`import XXX from "xxx/my-demo-lib.umd.js"`试用一下。你会发现无法使用。
+所以你需要在`babel.config.js`中新增`umd`或者`commonjs`解析器。
+
+```js
+module.exports = {
+  presets: ["@vue/app"],
+  plugins: [
+    "@babel/plugin-transform-modules-commonjs", // leave to import .common.js files
+    "@babel/plugin-transform-modules-umd" // leave to import .umd.js files
+  ]
+};
+```
