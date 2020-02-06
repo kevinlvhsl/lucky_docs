@@ -17,15 +17,16 @@
 - [3. 性能优化实践详解](../javascript/performance/性能优化实践.md)
 - [4. 前端工程能力思考](../javascript/前端工程能力思考.md)
 - [5. Web 前端页面劫持和反劫持](../javascript/deep/前端页面劫持和反劫持.md)
-* [6. 前端工程能力思考](../engine/前端工程能力思考.md)
-* [7. 企业级微服务方案](../engine/企业级微服务方案.md)
-* [8. 前端性能优化度量](../engine/前端性能优化度量.md)
+- [6. 前端工程能力思考](../engine/前端工程能力思考.md)
+- [7. 企业级微服务方案](../engine/企业级微服务方案.md)
+- [8. 前端性能优化度量](../engine/前端性能优化度量.md)
+- [9. Vue-cli配置详解](https://github.com/staven630/vue-cli4-config)
 
 ## 三、实现方案
 
 - [1. 如何全局显示工具栏](./program/如何全局显示工具栏.md)
 - [2. Vue-CLI解决跨域问题](./proxy.md)
-
+- [3. Vue多入口打包性能优化](./deep/Vue多入口打包性能优化.md)
 
 ## 四、推荐文章系列
 
