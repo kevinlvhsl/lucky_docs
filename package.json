@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx vuepress dev docs",
+    "serve": "npx vuepress dev docs",
     "push":"git add . && git commit -m 'docs: update doc' && git push",
     "build": "npx vuepress build docs && cp -R ./docs/.vuepress/dist/* ../mrgaogang.github.io/ && cd ../mrgaogang.github.io/ && git add . && git commit -m 'docs: update' && git push"
   },
