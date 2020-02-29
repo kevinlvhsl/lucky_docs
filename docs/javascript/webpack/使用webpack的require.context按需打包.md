@@ -170,6 +170,13 @@ module.exports = {
   }
 };
 ```
+其打包的结果为：不存在prop文件了
+
+<a data-fancybox title="" href="/images/webpack/no-prop.png">![](/images/webpack/no-prop.png)</a>
+
+展示效果为:
+
+<a data-fancybox title="" href="/images/webpack/success-two.png">![](/images/webpack/success-two.png)</a>
 
 最后只需要在宿主工程引入一个`yarn add empty-widget`即可。`empty-widget`的体积 19B，可以忽略不计哦。
 
