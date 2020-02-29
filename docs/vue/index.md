@@ -7,8 +7,8 @@
 - [3. Vue 中插件开发的四种方式](./Vue中插件开发的四种方式.md)
 - [4. Vue 路由变化页面没有刷新](./Vue路由变化页面没有刷新解决办法.md)
 - [5. Vuex 中 Getter,Action,Mutation 函数参数说明](./Vuex中Getter,Action,Mutation函数参数说明.md)
-- [6. Vue及React单向数据流的理解](./Vue及React单向数据流的理解.md)
-- [7. 你所忽略的Vue](./你所忽略的Vue.md)
+- [6. Vue 及 React 单向数据流的理解](./Vue及React单向数据流的理解.md)
+- [7. 你所忽略的 Vue](./你所忽略的Vue.md)
 
 ## 二、深入系列
 
@@ -20,13 +20,15 @@
 - [6. 前端工程能力思考](../engine/前端工程能力思考.md)
 - [7. 企业级微服务方案](../engine/企业级微服务方案.md)
 - [8. 前端性能优化度量](../engine/前端性能优化度量.md)
-- [9. Vue-cli配置详解](https://github.com/staven630/vue-cli4-config)
+- [9. Vue-cli 配置详解](https://github.com/staven630/vue-cli4-config)
 
 ## 三、实现方案
 
 - [1. 如何全局显示工具栏](./program/如何全局显示工具栏.md)
-- [2. Vue-CLI解决跨域问题](./proxy.md)
-- [3. Vue多入口打包性能优化](./deep/Vue多入口打包性能优化.md)
+- [2. Vue-CLI 解决跨域问题](./proxy.md)
+- [3. Vue 多入口打包性能优化](./deep/Vue多入口打包性能优化.md)
+- [4. 如何给应用添加 PWA](./如何添加PWA.md)
+- [5. 使用webpack的require.context按需打包](../javascript/webpack/使用webpack的require.context按需打包.md)
 
 ## 四、推荐文章系列
 
@@ -34,11 +36,11 @@
 - [2. 记录面试中一些回答不够好的题](https://juejin.im/post/5a9b8417518825558251ce15)
 - [3. 滴滴 webapp 5.0 Vue 2.0 重构经验分享 ](https://github.com/DDFE/DDFE-blog/issues/13)
 - [4. 现代浏览器观察者 Observer API 指南](https://juejin.im/post/5db10695e51d452a091fde90)
-- [5. Vue-Router面试题汇总](https://juejin.im/post/5d9c43b751882507b40d3376)
-- [6. Vuex面试题汇总](https://juejin.im/post/5dba91e4518825647e4ef18b)
-- [7. Vue 开发必须知道的 36 个技巧【近1W字】](https://juejin.im/post/5d9d386fe51d45784d3f8637#heading-21)
+- [5. Vue-Router 面试题汇总](https://juejin.im/post/5d9c43b751882507b40d3376)
+- [6. Vuex 面试题汇总](https://juejin.im/post/5dba91e4518825647e4ef18b)
+- [7. Vue 开发必须知道的 36 个技巧【近 1W 字】](https://juejin.im/post/5d9d386fe51d45784d3f8637#heading-21)
 - [8. 精通 Intersection Observer API](https://juejin.im/post/5dd60de9e51d4536792e4298?utm_source=gold_browser_extension)
-- [9. 实现双向绑定Proxy比defineproperty优劣如何?](https://juejin.im/post/5acd0c8a6fb9a028da7cdfaf#heading-9)
+- [9. 实现双向绑定 Proxy 比 defineproperty 优劣如何?](https://juejin.im/post/5acd0c8a6fb9a028da7cdfaf#heading-9)
 - [10. 一张图理清 Vue 3.0 的响应式系统](https://juejin.im/post/5d9da45af265da5b8072de5d)
 - [11. 关于移动端适配，你必须要知道的](https://juejin.im/post/5cddf289f265da038f77696c#heading-21)
 
@@ -46,7 +48,7 @@
 
 - [1. Vue 使用 jest 单元测试详解](./test/Vue使用jest单元测试详解.md)
 
-## 刘、自动化测试工具
+## 六、自动化测试工具
 
 ### 1. [vue-styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) (推荐)
 
@@ -129,10 +131,17 @@ vue-grid-layout 是一个类似于[Gridster](http://dsmorse.github.io/gridster.j
 
 **解决 webpack 打包 js/image/css，设置不同 publicPath，导致相对路径问题**
 
-### 7. [vue-form-making](https://github.com/GavinZhuLei/vue-form-making)
-
-**在线拖拽，基于 Vue 的表单设计器，让表单开发简单而高效**
-
-### 8. [vue-cli-plugin-electron-builder](https://github.com/nklayman/vue-cli-plugin-electron-builder)(重要)
+### 7. [vue-cli-plugin-electron-builder](https://github.com/nklayman/vue-cli-plugin-electron-builder)(重要)
 
 **使用 Vue 开发 Mac,Windows 应用程序**
+
+### 8. 流程图绘制
+
+- [draw.io](https://github.com/jgraph/drawio) 建议十分负责的流程图使用 **现在绘制流程图，功能十分强大，底层使用的 mxgraph 绘制的**
+- [mxgraph](https://github.com/jgraph/mxgraph) **现在绘制流程图，功能十分强大，使用的 SVG 渲染图**
+- [dagre-d3](https://github.com/dagrejs/dagre-d3) 建议简单流程图使用 **一款简单入手，通过数据自动生成流程图** [参考文档](https://www.jianshu.com/p/36edb4031b2a)
+
+### 9. 移动端调试控制台 eruda
+
+> Eruda 是一个专为手机网页前端设计的调试面板，类似 DevTools 的迷你版，其主要功能包括：捕获 console 日志、检查元素状态、捕获 XHR 请求、显示本地存储和 Cookie 信息等等。
+> [eruda](https://github.com/liriliri/eruda/blob/master/doc/README_CN.md)

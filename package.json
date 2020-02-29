@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "npx vuepress dev docs",
-    "push":"git add . && git commit -m 'docs: update doc' && git push",
+    "push": "git add . && git commit -m 'docs: update doc' && git push",
     "build": "npx vuepress build docs && cp -R ./docs/.vuepress/dist/* ../mrgaogang.github.io/ && cd ../mrgaogang.github.io/ && git add . && git commit -m 'docs: update' && git push"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/MrGaoGang/lucky_docs#readme",
   "devDependencies": {
+    "@vuepress/plugin-pwa": "^1.3.1",
     "vuepress": "^1.0.4"
   },
   "dependencies": {

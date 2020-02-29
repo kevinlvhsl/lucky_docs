@@ -45,6 +45,7 @@
 - [3. chunk-hash,hash 和 content-hash 的区别](./webpack/chunk-hash,hash和content-hash的区别.md)
 - [4. webpack-chain 常用配置](./webpack/webpack-chain常用配置.md)
 - [5. webpack 模块异步加载原理解析](./webpack/webpack模块异步加载原理解析.md)
+- [6. 使用webpack的require.context按需打包](./webpack/使用webpack的require.context按需打包.md)
 
 ## 五、前端性能优化
 
