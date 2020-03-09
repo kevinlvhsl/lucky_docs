@@ -133,6 +133,35 @@ api.onCreateComplete(() => {
 });
 ```
 
+#### injectImports
+
+作用：向某个文件注入`import`
+
+- **入参**
+
+  - {string} file - target file to add imports
+  - {string | [string]} imports - imports string/array
+
+示例：
+
+```js
+module.exports = api => {
+  api.extendPackage({
+    dependencies: {
+      'register-service-worker': '^1.6.2'
+    }
+  })
+  api.injectImports(api.entryFile, `import './registerServiceWorker'`)
+  api.render('./template')
+
+  if (api.invoking && api.hasPlugin('typescript')) {
+    /* eslint-disable-next-line node/no-extraneous-require */
+    const convertFiles = require('@vue/cli-plugin-typescript/generator/convert')
+    convertFiles(api)
+  }
+}
+```
+
 #### extendPackage
 
 - **入参**
@@ -525,7 +554,6 @@ npm publish
 
 
 ```
-
 
 给个赞呗！[原文地址](https://mrgaogang.github.io/vue/Vue-cli%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91.html#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF-cli-plugin)
 
